@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Autofac;
+using CoreApp.Commands;
+using CoreApp.Interfaces;
 using PCLAppConfig;
 using PCLAppConfig.Common;
 using PCLAppConfig.Infrastructure;
@@ -107,6 +109,7 @@ namespace CoreApp
         {
             initialisePlatformContainer?.Invoke();
 
+            Resolver.Instance.RegisterGeneric(typeof(IDelegateCommand<,>), typeof(DelegateCommand<,>), LifetimeScope.InstancePerDependency);
             Resolver.Instance.Register<IApplicationDomain, ApplicationDomain>(LifetimeScope.Singleton);
             Resolver.Instance.Register<IConfigManager, ConfigManager>(LifetimeScope.Singleton);
         }
