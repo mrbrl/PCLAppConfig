@@ -153,7 +153,7 @@
       <Project>{374D4C1C-2945-4E32-8BD0-C4EF2173E574}</Project>
       <Name>PCLResolver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\CoreApp\CoreApp.csproj">
+    <ProjectReference Include="..\PCLCoreApp\PCLCoreApp.csproj">
       <Project>{70f1c889-8162-455d-8f4c-4955a5e7a933}</Project>
       <Name>CoreApp</Name>
     </ProjectReference>

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.App.Droid", "Host\PCLAppConfig.App.Droid\PCLAppConfig.App.Droid.csproj", "{6F17C179-0935-4681-AF4C-B1B5DE2AD6CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppDemo.App.Droid", "Host\PCLAppDemo.App.Droid\PCLAppDemo.App.Droid.csproj", "{6F17C179-0935-4681-AF4C-B1B5DE2AD6CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.App.iOS", "Host\PCLAppConfig.App.iOS\PCLAppConfig.App.iOS.csproj", "{800C56E5-50B9-4CBB-89CC-26457BE103F3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppDemo.App.iOS", "Host\PCLAppDemo.App.iOS\PCLAppDemo.App.iOS.csproj", "{800C56E5-50B9-4CBB-89CC-26457BE103F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.App", "Host\PCLAppConfig.App\PCLAppConfig.App.csproj", "{629DD240-4CD3-4116-A2BE-D8DA783DDD2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppDemo.App", "Host\PCLAppDemo.App\PCLAppDemo.App.csproj", "{629DD240-4CD3-4116-A2BE-D8DA783DDD2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{70584D47-5C81-4C41-BA98-B5E6D9B8A40E}"
 EndProject
@@ -21,13 +21,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLResolver", "Lib\PCLResol
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.Common", "Lib\PCLAppConfig.Common\PCLAppConfig.Common.csproj", "{DDB1F4BB-5F0B-44FA-B236-903F32767036}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mobile", "Mobile", "{2A306BCD-93C6-4CB8-8922-3A76B22BCE45}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PCLCoreApp", "PCLCoreApp", "{2A306BCD-93C6-4CB8-8922-3A76B22BCE45}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp", "Lib\Mobile\CoreApp\CoreApp.csproj", "{70F1C889-8162-455D-8F4C-4955A5E7A933}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLCoreApp", "Lib\PCLCoreApp\PCLCoreApp\PCLCoreApp.csproj", "{70F1C889-8162-455D-8F4C-4955A5E7A933}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp.Droid", "Lib\Mobile\CoreApp.Droid\CoreApp.Droid.csproj", "{4B63F006-46E6-40A6-A844-704BB4852867}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLCoreApp.Droid", "Lib\PCLCoreApp\PCLCoreApp.Droid\PCLCoreApp.Droid.csproj", "{4B63F006-46E6-40A6-A844-704BB4852867}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreApp.iOS", "Lib\Mobile\CoreApp.iOS\CoreApp.iOS.csproj", "{9B846BED-F7E5-4E44-B9CC-DC2AD64155A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLCoreApp.iOS", "Lib\PCLCoreApp\PCLCoreApp.iOS\PCLCoreApp.iOS.csproj", "{9B846BED-F7E5-4E44-B9CC-DC2AD64155A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

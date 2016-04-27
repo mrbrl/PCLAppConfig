@@ -157,11 +157,11 @@
     <None Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib\Mobile\CoreApp.Droid\CoreApp.Droid.csproj">
+    <ProjectReference Include="..\..\Lib\PCLCoreApp\PCLCoreApp.Droid\PCLCoreApp.Droid.csproj">
       <Project>{4B63F006-46E6-40A6-A844-704BB4852867}</Project>
       <Name>CoreApp.Droid</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Lib\Mobile\CoreApp\CoreApp.csproj">
+    <ProjectReference Include="..\..\Lib\PCLCoreApp\PCLCoreApp\PCLCoreApp.csproj">
       <Project>{70F1C889-8162-455D-8F4C-4955A5E7A933}</Project>
       <Name>CoreApp</Name>
     </ProjectReference>
@@ -177,7 +177,7 @@
       <Project>{374d4c1c-2945-4e32-8bd0-c4ef2173e574}</Project>
       <Name>PCLResolver</Name>
     </ProjectReference>
-    <ProjectReference Include="..\PCLAppConfig.App\PCLAppConfig.App.csproj">
+    <ProjectReference Include="..\PCLAppDemo.App\PCLAppDemo.App.csproj">
       <Name>PCLAppConfig.App</Name>
       <Project>{629DD240-4CD3-4116-A2BE-D8DA783DDD2C}</Project>
     </ProjectReference>
