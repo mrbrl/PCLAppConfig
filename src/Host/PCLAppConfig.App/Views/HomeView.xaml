@@ -1,0 +1,11 @@
+﻿<mvvm:BaseView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PCLAppConfig.App.Views.HomeView"
+             xmlns:views="clr-namespace:PCLAppConfig.App.Views;assembly=PCLAppConfig.App"
+             xmlns:mvvm="clr-namespace:XLabs.Forms.Mvvm;assembly=XLabs.Forms">
+
+    <ContentPage.Content>
+        <StackLayout x:Name="RelLayout">
+        </StackLayout>
+    </ContentPage.Content>
+</mvvm:BaseView>
