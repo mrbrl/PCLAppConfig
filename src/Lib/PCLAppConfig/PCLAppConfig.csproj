@@ -39,6 +39,7 @@
     <Compile Include="Enum\DeviceType.cs" />
     <Compile Include="Helpers\ApplicationDomainHelpers.cs" />
     <Compile Include="Infrastructure\ApplicationDomain.cs" />
+    <Compile Include="Infrastructure\Configuration.cs" />
     <Compile Include="Interfaces\IApplicationDomain.cs" />
     <Compile Include="Interfaces\IConfigManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -57,6 +58,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Humanizer, Version=2.0.1.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Humanizer.Core.2.0.1\lib\portable-win+net45+wp8+wpa81\Humanizer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="UnifiedStorage">
       <HintPath>..\..\packages\UnifiedStorage.1.0.4\lib\Xamarin.iOS10\UnifiedStorage.dll</HintPath>
     </Reference>

@@ -6,6 +6,7 @@
 
     <ContentPage.Content>
         <StackLayout x:Name="RelLayout">
+                <Label Text="{Binding ConfigText }"/>
         </StackLayout>
     </ContentPage.Content>
 </mvvm:BaseView>

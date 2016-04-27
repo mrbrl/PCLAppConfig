@@ -142,6 +142,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="..\PCLAppDemo.App\app.config">
+      <Link>Assets\app.config</Link>
+    </AndroidAsset>
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />

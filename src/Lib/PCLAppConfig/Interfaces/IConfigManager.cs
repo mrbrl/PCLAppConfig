@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PCLAppConfig.Infrastructure;
 
 namespace PCLAppConfig.Interfaces
 {
     public interface IConfigManager
     {
-        object GetSection(string sectionName, string configPath);
+        List<Setting> AppSettings { get; }
+
+        string GetAppSetting(string key);
+
+        T LoadSection<T>();
     }
 }

@@ -6,7 +6,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
+using System.Xml.Serialization;
+using Humanizer;
 using PCLAppConfig.Helpers;
+using PCLAppConfig.Infrastructure;
 using PCLAppConfig.Interfaces;
 using UnifiedStorage;
 
@@ -15,9 +18,11 @@ namespace PCLAppConfig
 {
     public class ConfigManager : IConfigManager
     {
-        protected readonly IFileSystem _fileSystem;
-        private Dictionary<string, XDocument> _docMap;
+        private readonly IFileSystem _fileSystem;
+        private readonly Dictionary<string, XDocument> _docMap;
         private const string ROOT_ELEMENT = "configuration";
+
+        public List<Setting> AppSettings => LoadSection<Configuration>().Settings;
 
         public ConfigManager(IFileSystem fileSystem)
         {
@@ -25,7 +30,46 @@ namespace PCLAppConfig
             _docMap = new Dictionary<string, XDocument>();
         }
 
-        public object GetSection(string sectionName, string configPath)
+        public string GetAppSetting(string key)
+        {
+            try
+            {
+                return AppSettings.First(x => x.Key == key).Value;
+            }
+            catch (Exception)
+            {
+                throw new Exception($"Configuration key not found: {key}");
+            }
+        } 
+
+        public T LoadSection<T>()
+        {
+            // load custom sections
+            // skip custom element if root is configuration
+            var sectionName = typeof(T).Name.ToLower() == ROOT_ELEMENT ? null : typeof(T).Name.Camelize();
+            var section = GetSection(sectionName, null);
+
+            if (!(section is CustomConfigSection)) throw new Exception(
+                "The configuration section '" + sectionName +
+                "' must have a section handler of type '" +
+                typeof(CustomConfigSection).FullName + "'.");
+
+            if (section == null) throw new Exception(
+                "Could not find configuration section '" + sectionName + "'.");
+
+            using (var stream = new MemoryStream())
+            {
+                var element = ((CustomConfigSection)section).Element;
+                element.Save(stream);
+                stream.Position = 0;
+
+                var serializer = new XmlSerializer(typeof(T));
+                var result = serializer.Deserialize(stream);
+                return (T)result;
+            }
+        }
+
+        private object GetSection(string sectionName, string configPath)
         {
             if (string.IsNullOrEmpty(configPath))
                 configPath = ApplicationDomainHelpers.GetConfigFilePath();
@@ -35,7 +79,8 @@ namespace PCLAppConfig
 
             var doc = _docMap[configPath];
 
-            var section = doc.Element(ROOT_ELEMENT).Element(sectionName);
+            var section = string.IsNullOrEmpty(sectionName) ? doc.Element(ROOT_ELEMENT)
+                : doc.Element(ROOT_ELEMENT).Element(sectionName);
 
             return new CustomConfigSection() { Element = section };
         }
