@@ -89,6 +89,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />
+    <Compile Include="Infrastructure\iOSSettingsManager.cs" />
     <Compile Include="Main.cs" />
     <None Include="..\PCLAppDemo.App\app.config">
       <Link>app.config</Link>
@@ -100,6 +101,7 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork@2x" />
     <None Include="packages.config" />
+    <BundleResource Include="Settings.bundle\Root.plist" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\Lib\PCLCoreApp\PCLCoreApp.iOS\PCLCoreApp.iOS.csproj">

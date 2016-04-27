@@ -23,9 +23,9 @@
 	<key>MinimumOSVersion</key>
 	<string>6.0</string>
 	<key>CFBundleDisplayName</key>
-	<string>PCLAppConfig</string>
+	<string>PCLAppDemo</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.monovo.PCLAppConfig</string>
+	<string>com.monovo.PCLAppDemo</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleIconFiles</key>
