@@ -1,26 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Autofac;
 using PCLResolver.Enum;
 using PCLResolver.Interfaces;
 
 namespace PCLResolver.Resolvers
 {
-    public class AutoFacResolver : IResolver
+    public class AutofacResolver : IResolver
     {
         private IContainer _container;
         private readonly ContainerBuilder _builder;
         private bool _isInitialised;
 
-        public AutoFacResolver()
+        public AutofacResolver()
         {
             _builder = new ContainerBuilder();
         }
 
-        public AutoFacResolver(ContainerBuilder builder)
+        public AutofacResolver(ContainerBuilder builder)
         {
             _builder = builder;
         }

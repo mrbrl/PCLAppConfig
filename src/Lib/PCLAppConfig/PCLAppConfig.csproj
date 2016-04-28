@@ -35,9 +35,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ConfigManager.cs" />
-    <Compile Include="CustomConfigSection.cs" />
+    <Compile Include="Infrastructure\CustomConfigSection.cs" />
     <Compile Include="Enum\DeviceType.cs" />
-    <Compile Include="Helpers\ApplicationDomainHelpers.cs" />
     <Compile Include="Infrastructure\ApplicationDomain.cs" />
     <Compile Include="Infrastructure\Configuration.cs" />
     <Compile Include="Interfaces\IApplicationDomain.cs" />
@@ -46,16 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PCLAppConfig.Common\PCLAppConfig.Common.csproj">
-      <Project>{ddb1f4bb-5f0b-44fa-b236-903f32767036}</Project>
-      <Name>PCLAppConfig.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PCLResolver\PCLResolver.csproj">
-      <Project>{374d4c1c-2945-4e32-8bd0-c4ef2173e574}</Project>
-      <Name>PCLResolver</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Humanizer, Version=2.0.1.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">

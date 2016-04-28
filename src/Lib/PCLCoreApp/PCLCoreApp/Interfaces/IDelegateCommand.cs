@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace CoreApp.Interfaces
+namespace PCLCoreApp.Interfaces
 {
     public interface IDelegateCommand<TArgument, TResult> : ICommand
     {

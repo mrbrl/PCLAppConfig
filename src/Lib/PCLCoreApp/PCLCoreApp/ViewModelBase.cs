@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using XLabs.Forms.Mvvm;
 
-namespace CoreApp
+namespace PCLCoreApp
 {
     ///     Base class for all view models
     ///     - Implements INotifyPropertyChanged for WinRT

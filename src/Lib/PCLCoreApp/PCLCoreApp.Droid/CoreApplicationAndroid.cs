@@ -1,4 +1,5 @@
-using PCLAppConfig.Common;
+using PCLResolver;
+using PCLResolver.Resolvers;
 using UnifiedStorage;
 using UnifiedStorage.Android;
 using XLabs.Forms;
@@ -7,7 +8,7 @@ using XLabs.Platform.Services.Geolocation;
 using XLabs.Platform.Services.IO;
 using XLabs.Platform.Services.Media;
 
-namespace PCLAppConfig.App.Droid
+namespace PCLCoreApp.Droid
 {
     public class CoreApplicationAndroid : XFormsAppDroid
     {
@@ -20,14 +21,14 @@ namespace PCLAppConfig.App.Droid
 
         private void InitialiseContainer()
         {
-            Resolver.Instance.Register<IFileSystem, FileSystem>();
+            Resolver<AutofacResolver>.Instance.Register<IFileSystem, FileSystem>();
 
             //manually registering XLabs services into our container so that they're globally available
-            Resolver.Instance.Register<IGeolocator, Geolocator>();
-            Resolver.Instance.Register<IMediaPicker, MediaPicker>();
-            Resolver.Instance.Register<ISoundService, SoundService>();
-            Resolver.Instance.Register<IFileManager, FileManager>();
-            Resolver.Instance.Register<IDevice>(AndroidDevice.CurrentDevice);
+            Resolver<AutofacResolver>.Instance.Register<IGeolocator, Geolocator>();
+            Resolver<AutofacResolver>.Instance.Register<IMediaPicker, MediaPicker>();
+            Resolver<AutofacResolver>.Instance.Register<ISoundService, SoundService>();
+            Resolver<AutofacResolver>.Instance.Register<IFileManager, FileManager>();
+            Resolver<AutofacResolver>.Instance.Register<IDevice>(AndroidDevice.CurrentDevice);
         }
     }
 }

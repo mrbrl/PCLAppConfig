@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Autofac;
-using CoreApp.Commands;
-using CoreApp.Interfaces;
+using PCLCoreApp.Commands;
+using PCLCoreApp.Interfaces;
 using PCLAppConfig;
-using PCLAppConfig.Common;
 using PCLAppConfig.Infrastructure;
 using PCLAppConfig.Interfaces;
+using PCLResolver;
 using PCLResolver.Enum;
+using PCLResolver.Resolvers;
 using Xamarin.Forms;
 using XLabs;
 using XLabs.Enums;
 using XLabs.Forms.Mvvm;
-using XLabs.Ioc.Autofac;
 using XLabs.Platform.Mvvm;
 
-namespace CoreApp
+
+namespace PCLCoreApp
 {
     public abstract class CoreApplication : Application, IXFormsApp
     {
@@ -41,17 +40,17 @@ namespace CoreApp
             SetViewModelMapping();
 
             // build di container
-            Resolver.Instance.Initialise();
+            Resolver<AutofacResolver>.Instance.Initialise();
 
             // set internal Xlabs di container to our container
-            XLabs.Ioc.Resolver.SetResolver(new AutofacResolver(Resolver.Instance.GetContainer<IContainer>()));
+            XLabs.Ioc.Resolver.SetResolver(new XLabs.Ioc.Autofac.AutofacResolver(Resolver<AutofacResolver>.Instance.GetContainer<IContainer>()));
 
             containerInitialized();
 
             // apply mapping now the container is initialized
             ApplyViewMappings();
 
-            _formsApp = Resolver.Instance.Resolve<IXFormsApp>();
+            _formsApp = Resolver<AutofacResolver>.Instance.Resolve<IXFormsApp>();
 
             if (_formsApp == null)
                 throw new Exception("Failed to resolve IXFormsApp - please ensure your platform-specific app is registering itself with the container");
@@ -70,10 +69,10 @@ namespace CoreApp
           where TView : class
           where TViewModel : class, IViewModel
         {
-            Resolver.Instance.Register<TViewModel>();
+            Resolver<AutofacResolver>.Instance.Register<TViewModel>();
             _viewMappingActions.Add(() =>
             {
-                ViewFactory.Register<TView, TViewModel>(x => Resolver.Instance.Resolve<TViewModel>());
+                ViewFactory.Register<TView, TViewModel>(x => Resolver<AutofacResolver>.Instance.Resolve<TViewModel>());
             });
         }
 
@@ -109,9 +108,9 @@ namespace CoreApp
         {
             initialisePlatformContainer?.Invoke();
 
-            Resolver.Instance.RegisterGeneric(typeof(IDelegateCommand<,>), typeof(DelegateCommand<,>), LifetimeScope.InstancePerDependency);
-            Resolver.Instance.Register<IApplicationDomain, ApplicationDomain>(LifetimeScope.Singleton);
-            Resolver.Instance.Register<IConfigManager, ConfigManager>(LifetimeScope.Singleton);
+            Resolver<AutofacResolver>.Instance.RegisterGeneric(typeof(IDelegateCommand<,>), typeof(DelegateCommand<,>), LifetimeScope.InstancePerDependency);
+            Resolver<AutofacResolver>.Instance.Register<IApplicationDomain, ApplicationDomain>(LifetimeScope.Singleton);
+            Resolver<AutofacResolver>.Instance.Register<IConfigManager, ConfigManager>(LifetimeScope.Singleton);
         }
 
         public bool IsInitialized { get; }

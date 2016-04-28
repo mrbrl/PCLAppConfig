@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using CoreApp;
+using PCLCoreApp;
 using Foundation;
-using PCLAppConfig.App.iOS;
-using PCLAppConfig.Common;
+using PCLAppConfig.Enum;
 using PCLAppConfig.Interfaces;
+using PCLResolver;
+using PCLResolver.Resolvers;
 using UIKit;
 using Xamarin.Forms;
 using XLabs.Forms;
 using XLabs.Forms.Mvvm;
 using XLabs.Platform.Mvvm;
 
-namespace PCLAppConfig.iOS
+namespace PCLCoreApp.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
     // User Interface of the application, as well as listening (and optionally responding) to 
@@ -43,7 +42,7 @@ namespace PCLAppConfig.iOS
 
             //init iOS app
             var appIos = new CoreApplicationiOS();
-            Resolver.Instance.Register<IXFormsApp>(appIos);
+            Resolver<AutofacResolver>.Instance.Register<IXFormsApp>(appIos);
             appIos.Init(this, false);
 
             //init portable app
@@ -57,9 +56,10 @@ namespace PCLAppConfig.iOS
 
         private void SetApplicationDomain()
         {
-            Resolver.Instance.Resolve<IApplicationDomain>().BaseDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
-            Resolver.Instance.Resolve<IApplicationDomain>().ConfigFilePath = System.AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
-            Resolver.Instance.Resolve<IApplicationDomain>().ExecutingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            Resolver<AutofacResolver>.Instance.Resolve<IApplicationDomain>().BaseDirectory = System.AppDomain.CurrentDomain.BaseDirectory;
+            Resolver<AutofacResolver>.Instance.Resolve<IApplicationDomain>().ConfigFilePath = System.AppDomain.CurrentDomain.SetupInformation.ConfigurationFile;
+            Resolver<AutofacResolver>.Instance.Resolve<IApplicationDomain>().ExecutingAssemblyName = Assembly.GetExecutingAssembly().GetName().Name;
+            Resolver<AutofacResolver>.Instance.Resolve<IApplicationDomain>().DeviceType = DeviceType.iOS;
         }
     }
 }

@@ -8,9 +8,9 @@
     <ProjectGuid>{9B846BED-F7E5-4E44-B9CC-DC2AD64155A7}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>CoreApp.iOS</RootNamespace>
+    <RootNamespace>PCLCoreApp.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>CoreApp.iOS</AssemblyName>
+    <AssemblyName>PCLCoreApp.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -107,10 +107,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PCLAppConfig.Common\PCLAppConfig.Common.csproj">
-      <Project>{ddb1f4bb-5f0b-44fa-b236-903f32767036}</Project>
-      <Name>PCLAppConfig.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-B785-4FD8-B486-FA157FD55852}</Project>
       <Name>PCLAppConfig</Name>
@@ -121,7 +117,7 @@
     </ProjectReference>
     <ProjectReference Include="..\PCLCoreApp\PCLCoreApp.csproj">
       <Project>{70f1c889-8162-455d-8f4c-4955a5e7a933}</Project>
-      <Name>CoreApp</Name>
+      <Name>PCLCoreApp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

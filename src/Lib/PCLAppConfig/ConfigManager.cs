@@ -2,13 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 using Humanizer;
-using PCLAppConfig.Helpers;
 using PCLAppConfig.Infrastructure;
 using PCLAppConfig.Interfaces;
 using UnifiedStorage;
@@ -20,13 +16,15 @@ namespace PCLAppConfig
     {
         private readonly IFileSystem _fileSystem;
         private readonly Dictionary<string, XDocument> _docMap;
+        private readonly IApplicationDomain _applicationDomain;
         private const string ROOT_ELEMENT = "configuration";
 
         public List<Setting> AppSettings => LoadSection<Configuration>().Settings;
 
-        public ConfigManager(IFileSystem fileSystem)
+        public ConfigManager(IFileSystem fileSystem, IApplicationDomain applicationDomain)
         {
             _fileSystem = fileSystem;
+            _applicationDomain = applicationDomain;
             _docMap = new Dictionary<string, XDocument>();
         }
 
@@ -72,7 +70,7 @@ namespace PCLAppConfig
         private object GetSection(string sectionName, string configPath)
         {
             if (string.IsNullOrEmpty(configPath))
-                configPath = ApplicationDomainHelpers.GetConfigFilePath();
+                configPath = _applicationDomain.ConfigFilePath;
 
             if (!_docMap.ContainsKey(configPath))
                 InitDoc(configPath);
@@ -90,7 +88,7 @@ namespace PCLAppConfig
             string fullPath;
 
             if (!(configPath.Contains("/") || configPath.Contains("\\")))
-                fullPath = Path.Combine(ApplicationDomainHelpers.GetBaseDirectory(), configPath);
+                fullPath = Path.Combine(_applicationDomain.BaseDirectory, configPath);
             else
                 fullPath = configPath;
 

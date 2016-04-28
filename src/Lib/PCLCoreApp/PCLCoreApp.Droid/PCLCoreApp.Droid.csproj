@@ -5,12 +5,12 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{4B63F006-46E6-40A6-A844-704BB4852867}</ProjectGuid>
+    <ProjectGuid>{89749CD2-6AEA-4EA7-BEC9-DE42084D21F0}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CoreApp.Droid</RootNamespace>
-    <AssemblyName>CoreApp.Droid</AssemblyName>
+    <RootNamespace>PCLCoreApp.Droid</RootNamespace>
+    <AssemblyName>PCLCoreApp.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
@@ -32,8 +32,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>
-    </DefineConstants>
+    <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -43,21 +42,22 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\Xamarin.Forms.2.1.0.6529\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Forms.2.1.0.6529\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Mono.Android" />
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\MonoAndroid\v6.0\Mono.Android.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android.Export" />
     <Reference Include="mscorlib" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
-    <Reference Include="UnifiedStorage, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\packages\UnifiedStorage.1.0.4\lib\monoandroid\UnifiedStorage.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="UnifiedStorage">
+      <HintPath>..\..\..\packages\UnifiedStorage.1.0.4\lib\Xamarin.iOS10\UnifiedStorage.dll</HintPath>
     </Reference>
-    <Reference Include="UnifiedStorage.Android, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="UnifiedStorage.Android">
       <HintPath>..\..\..\packages\UnifiedStorage.1.0.4\lib\monoandroid\UnifiedStorage.Android.dll</HintPath>
       <Private>True</Private>
     </Reference>
@@ -128,8 +128,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CoreApplicationAndroid.cs" />
-    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="CoreMainActivity.cs" />
+    <Compile Include="Helpers\FileHelper.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -142,10 +142,6 @@
     <AndroidResource Include="Resources\Values\Strings.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PCLAppConfig.Common\PCLAppConfig.Common.csproj">
-      <Project>{DDB1F4BB-5F0B-44FA-B236-903F32767036}</Project>
-      <Name>PCLAppConfig.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-B785-4FD8-B486-FA157FD55852}</Project>
       <Name>PCLAppConfig</Name>
@@ -156,7 +152,7 @@
     </ProjectReference>
     <ProjectReference Include="..\PCLCoreApp\PCLCoreApp.csproj">
       <Project>{70f1c889-8162-455d-8f4c-4955a5e7a933}</Project>
-      <Name>CoreApp</Name>
+      <Name>PCLCoreApp</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

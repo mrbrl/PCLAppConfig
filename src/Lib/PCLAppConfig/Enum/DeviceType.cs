@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PCLAppConfig.Enum
+﻿namespace PCLAppConfig.Enum
 {
     public enum DeviceType
     {
@@ -14,17 +8,17 @@ namespace PCLAppConfig.Enum
         Android,
 
         /// <summary>
-        ///     The i os.
+        ///     The ios.
         /// </summary>
         iOS,
 
         /// <summary>
-        ///     The windows mobile.
+        ///     The windows universal.
         /// </summary>
-        WindowsMobile,
+        UWP,
 
         /// <summary>
-        ///     The plain dontnet.
+        ///     The plain dotnet.
         /// </summary>
         DotNet,
     }

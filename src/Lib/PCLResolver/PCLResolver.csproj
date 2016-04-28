@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Resolver.cs" />
     <Compile Include="Resolvers\AutofacResolver.cs" />
     <Compile Include="Enum\LifetimeScope.cs" />
     <Compile Include="Interfaces\IResolver.cs" />

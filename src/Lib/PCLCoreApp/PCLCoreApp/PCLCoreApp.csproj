@@ -8,8 +8,8 @@
     <ProjectGuid>{70F1C889-8162-455D-8F4C-4955A5E7A933}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CoreApp</RootNamespace>
-    <AssemblyName>CoreApp</AssemblyName>
+    <RootNamespace>PCLCoreApp</RootNamespace>
+    <AssemblyName>PCLCoreApp</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -94,10 +94,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\PCLAppConfig.Common\PCLAppConfig.Common.csproj">
-      <Project>{DDB1F4BB-5F0B-44FA-B236-903F32767036}</Project>
-      <Name>PCLAppConfig.Common</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-B785-4FD8-B486-FA157FD55852}</Project>
       <Name>PCLAppConfig</Name>

@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using CoreApp.Interfaces;
+using PCLCoreApp.Interfaces;
 
-namespace CoreApp.Commands
+namespace PCLCoreApp.Commands
 {
     public class DelegateCommand<TArgument, TResult> : IDelegateCommand<TArgument, TResult>, ICommand
     {

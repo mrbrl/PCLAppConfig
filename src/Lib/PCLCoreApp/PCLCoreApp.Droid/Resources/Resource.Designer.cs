@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("CoreApp.Droid.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("PCLCoreApp.Droid.Resource", IsApplication=false)]
 
-namespace CoreApp.Droid
+namespace PCLCoreApp.Droid
 {
 	
 	
