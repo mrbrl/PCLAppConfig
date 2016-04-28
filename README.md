@@ -73,4 +73,12 @@ If you use PCL CoreApp, you can skip points 1,2,3
 - Add Xamarin.Forms tdd testing shell (and therefore add the tests that i left out so far)
 
 
+
+## PCL Resolver
+todo
+
+## PCL CoreApp
+todo
+
+
 Comments and suggestions are welcomed!
