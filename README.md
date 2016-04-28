@@ -5,8 +5,11 @@ Created for a xamarin demo at MSFT Singapore on 27/04/2016
 
 
 Xamarin.Forms PCL:
+
 	- PCL AppConfig : cross platfom xamarin forms app settings reader
+	
 	- PCL Resolver : cross platform cross container dependency injection resolver. can be equally used on asp.net mvc projects, xamarin projects, workers... one solution for all
+	
 	- PCL CoreApp : provides true MVVM separation of concerns: Put all you logic on the viemodel, use commands, binding, and leave the .xaml code behind empty, and makes your app tdd, bdd friendly.Control the app flow from the viewmodel, PCL dependency registration, viewmodel / model registration
 
 	
