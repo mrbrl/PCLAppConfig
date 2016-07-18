@@ -1,0 +1,31 @@
+﻿<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>PCLAppConfig</id>
+		<version>0.1.0-alpha</version>
+		<title>AppConfig.Packager</title>
+		<authors>Ben Ishiyama-levy (Monovo), Seyyed Soroosh Hosseinalipour</authors>
+		<owners></owners>
+		<description>
+			Cross platform Xamarin forms App settings reader
+		</description>
+		<releaseNotes>
+			Initial release
+		</releaseNotes>
+		<summary>
+			Cross platform Xamarin forms App settings reader
+		</summary>
+		<language>en-US</language>
+		<projectUrl>https://nuget.org/packages/AppConfig.Packager</projectUrl>
+		<iconUrl>https://nuget.org/Content/Images/packageDefaultIcon-50x50.png</iconUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+		<copyright>Copyright  2016</copyright>
+		<dependencies>
+			<dependency id="Humanizer.Core" version="2.0.1"/>
+			<dependency id="UnifiedStorage" version="1.0.4"/>
+		</dependencies>
+		<references></references>
+		<tags></tags>
+	</metadata>
+</package>
