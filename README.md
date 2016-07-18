@@ -8,14 +8,16 @@ Xamarin.Forms PCL:
 
 	- PCL AppConfig : cross platfom xamarin forms app settings reader
 	
-	- PCL Resolver : cross platform cross container dependency injection resolver. can be equally used on asp.net mvc projects, xamarin projects, workers... one solution for all
-	
-	- PCL CoreApp : provides true MVVM separation of concerns: Put all you logic on the viemodel, use commands, binding, and leave the .xaml code behind empty, and makes your app tdd, bdd friendly.Control the app flow from the viewmodel, PCL dependency registration, viewmodel / model registration
-
-	
 ## PCL AppConfig
 
 usage:
+
+- Initialize ConfigurationManager.AppSettings on yout portable project like below
+
+```
+Assembly assembly = typeof(App).GetTypeInfo().Assembly;
+ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
+```
 
 - Add an app.config on your shared pcl project and ensure that Build Action:EmbeddedResource, and add your appSettings entries, as you would do with any app.config
 
@@ -30,7 +32,7 @@ usage:
 - Access your setting:
 
 ```
-Resolver<AutofacResolver>.Instance.Resolve<IConfigManager>().GetAppSetting("config.text");
+ConfigurationManager.AppSettings.FirstOrDefault(x => x.Key == "webapiaddress").Value;
 ```
 
 If you use PCL CoreApp, you can skip points 1,2,3
