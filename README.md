@@ -40,7 +40,6 @@ If you use PCL CoreApp, you can skip points 1,2,3
 
 ## Roadmap
 
-- Publish as Nuget
 - Add navigation examples
 - Add Xamarin.Forms tdd testing shell (and therefore add the tests that i left out so far)
 
