@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,13 +7,12 @@ using System.Xml.Linq;
 using System.Xml.Serialization;
 using Humanizer;
 using PCLAppConfig.Infrastructure;
-using PCLAppConfig.Interfaces;
 
 namespace PCLAppConfig
 {
-    public class ConfigurationManager : IConfigurationManager
+    public class ConfigurationManager
     {
-        public List<Setting> AppSettings => LoadSection<Configuration>().Settings;
+		public static List<Setting> AppSettings { get; }
 
         public ConfigurationManager(Stream configurationFile)
         {
