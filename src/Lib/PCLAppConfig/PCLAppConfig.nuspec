@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>PCLAppConfig</id>
+		<version>0.2.0-alpha</version>
+		<title>PCLAppConfig</title>
+		<authors>Ben Ishiyama-levy (Monovo), Seyyed Soroosh Hosseinalipour</authors>
+		<owners></owners>
+		<description>
+			Cross platform Xamarin forms App settings reader
+		</description>
+		<releaseNotes>
+			Initial release
+		</releaseNotes>
+		<summary>
+			Cross platform Xamarin forms App settings reader
+		</summary>
+		<language>en-US</language>
+		<projectUrl>https://github.com/soroshsabz/PCLAppConfig/tree/develop</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+		<copyright>Copyright  2016</copyright>
+		<dependencies>
+			<dependency id="Humanizer.Core" version="2.0.1"/>
+		</dependencies>
+		<references></references>
+		<tags></tags>
+	</metadata>
+</package>
