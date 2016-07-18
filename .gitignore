@@ -78,3 +78,5 @@ node_modules/
 wwwroot/
 markup/
 dev/
+/src/Lib/PCLAppConfig/nuget.exe
+*.nupkg
