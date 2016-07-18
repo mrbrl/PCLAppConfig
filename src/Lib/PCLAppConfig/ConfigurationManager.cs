@@ -12,7 +12,7 @@ namespace PCLAppConfig
 {
     public class ConfigurationManager
     {
-		public static List<Setting> AppSettings { get; }
+		public static List<Setting> AppSettings { get; set; }
 
         public ConfigurationManager(Stream configurationFile)
         {
@@ -30,7 +30,9 @@ namespace PCLAppConfig
             {
                 throw new Exception($"Configuration key not found: {key}");
             }
-        } 
+        }
+
+		public List<Setting> GetAppSettings => LoadSection<Configuration>().Settings;
 
         public T LoadSection<T>()
         {

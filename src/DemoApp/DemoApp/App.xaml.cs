@@ -5,6 +5,9 @@ using System.Text;
 
 using Xamarin.Forms;
 
+using PCLAppConfig;
+using System.Reflection;
+
 namespace DemoApp
 {
 	public partial class App : Application
@@ -12,6 +15,9 @@ namespace DemoApp
 		public App()
 		{
 			InitializeComponent();
+
+			Assembly assembly = typeof(App).GetTypeInfo().Assembly;
+			ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
 
 			MainPage = new DemoApp.MainPage();
 		}
