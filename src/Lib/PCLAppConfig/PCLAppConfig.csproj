@@ -36,13 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="ConfigManager.cs" />
+    <Compile Include="ConfigurationManager.cs" />
     <Compile Include="Infrastructure\CustomConfigSection.cs" />
-    <Compile Include="Enum\DeviceType.cs" />
-    <Compile Include="Infrastructure\ApplicationDomain.cs" />
     <Compile Include="Infrastructure\Configuration.cs" />
-    <Compile Include="Interfaces\IApplicationDomain.cs" />
-    <Compile Include="Interfaces\IConfigManager.cs" />
+    <Compile Include="Interfaces\IConfigurationManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +50,6 @@
     <Reference Include="Humanizer, Version=2.0.1.0, Culture=neutral, PublicKeyToken=979442b78dfc278e, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Humanizer.Core.2.0.1\lib\portable-win+net45+wp8+wpa81\Humanizer.dll</HintPath>
       <Private>True</Private>
-    </Reference>
-    <Reference Include="UnifiedStorage">
-      <HintPath>..\..\packages\UnifiedStorage.1.0.4\lib\Xamarin.iOS10\UnifiedStorage.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />

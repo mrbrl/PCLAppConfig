@@ -3,7 +3,7 @@ using PCLAppConfig.Infrastructure;
 
 namespace PCLAppConfig.Interfaces
 {
-    public interface IConfigManager
+    public interface IConfigurationManager
     {
         List<Setting> AppSettings { get; }
 

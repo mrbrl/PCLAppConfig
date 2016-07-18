@@ -23,7 +23,6 @@
 		<copyright>Copyright  2016</copyright>
 		<dependencies>
 			<dependency id="Humanizer.Core" version="2.0.1"/>
-			<dependency id="UnifiedStorage" version="1.0.4"/>
 		</dependencies>
 		<references></references>
 		<tags></tags>

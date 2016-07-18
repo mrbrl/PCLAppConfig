@@ -7,25 +7,17 @@ using System.Xml.Serialization;
 using Humanizer;
 using PCLAppConfig.Infrastructure;
 using PCLAppConfig.Interfaces;
-using UnifiedStorage;
-
 
 namespace PCLAppConfig
 {
-    public class ConfigManager : IConfigManager
+    public class ConfigurationManager : IConfigurationManager
     {
-        private readonly IFileSystem _fileSystem;
-        private readonly Dictionary<string, XDocument> _docMap;
-        private readonly IApplicationDomain _applicationDomain;
-        private const string ROOT_ELEMENT = "configuration";
-
         public List<Setting> AppSettings => LoadSection<Configuration>().Settings;
 
-        public ConfigManager(IFileSystem fileSystem, IApplicationDomain applicationDomain)
+        public ConfigurationManager(Stream configurationFile)
         {
-            _fileSystem = fileSystem;
-            _applicationDomain = applicationDomain;
-            _docMap = new Dictionary<string, XDocument>();
+			this.configurationFile = configurationFile;
+            this.docMap = new Dictionary<string, XDocument>();
         }
 
         public string GetAppSetting(string key)
@@ -69,13 +61,13 @@ namespace PCLAppConfig
 
         private object GetSection(string sectionName, string configPath)
         {
-            if (string.IsNullOrEmpty(configPath))
-                configPath = _applicationDomain.ConfigFilePath;
+			if (string.IsNullOrEmpty(configPath))
+				configPath = CONFIG_APP_DEFAULT_PATH; 
 
-            if (!_docMap.ContainsKey(configPath))
+            if (!this.docMap.ContainsKey(configPath))
                 InitDoc(configPath);
 
-            var doc = _docMap[configPath];
+            var doc = this.docMap[configPath];
 
             var section = string.IsNullOrEmpty(sectionName) ? doc.Element(ROOT_ELEMENT)
                 : doc.Element(ROOT_ELEMENT).Element(sectionName);
@@ -85,25 +77,18 @@ namespace PCLAppConfig
 
         private void InitDoc(string configPath)
         {
-            string fullPath;
-
-            if (!(configPath.Contains("/") || configPath.Contains("\\")))
-                fullPath = Path.Combine(_applicationDomain.BaseDirectory, configPath);
-            else
-                fullPath = configPath;
-
-            var file = _fileSystem.GetFileFromPathAsync(fullPath).Result;
-
-            if (!file.ExistsAsync().Result)
-                throw new Exception("Config file path not found: " + file.Path);
-
-            var stream = file.OpenAsync(FileAccessOption.ReadOnly).Result;
-
-            using (var reader = new StreamReader(stream))
+            using (var reader = new StreamReader(configurationFile))
             {
                 var doc = XDocument.Parse(reader.ReadToEnd());
-                _docMap.Add(configPath, doc);
+                this.docMap.Add(configPath, doc);
             }
         }
+
+        private const string ROOT_ELEMENT = "configuration";
+		private const string CONFIG_APP_DEFAULT_PATH = "App.config";
+
+        private readonly Dictionary<string, XDocument> docMap;
+
+		private readonly Stream configurationFile; 
     }   
 }
