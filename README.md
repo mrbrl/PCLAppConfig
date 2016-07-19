@@ -33,7 +33,8 @@ ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifest
 - Access your setting:
 
 ``` C#
-ConfigurationManager.AppSettings["webapiaddress"];
+ConfigurationManager.AppSettings["webapiaddress"]; // New API, not available in package yet.
+ConfigurationManager.AppSettings.FirstOrDefault(x => x.Key == "webapiaddress").Value; // Old API currently available on package.
 ```
 
 ## Roadmap
