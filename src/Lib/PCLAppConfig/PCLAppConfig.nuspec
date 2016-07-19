@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>PCLAppConfig</id>
-		<version>0.2.0-alpha</version>
+		<version>0.2.0-alpha2</version>
 		<title>PCLAppConfig</title>
 		<authors>Ben Ishiyama-levy (Monovo), Seyyed Soroosh Hosseinalipour</authors>
 		<owners></owners>
@@ -10,13 +10,15 @@
 			Cross platform Xamarin forms App settings reader
 		</description>
 		<releaseNotes>
-			Initial release
+			- Add new api for access to settings.
+			- Removed old api for access to settings.
+			- Add NameValueCollection. ( little similar to Microsoft NameValueCollection. :D )
 		</releaseNotes>
 		<summary>
 			Cross platform Xamarin forms App settings reader
 		</summary>
 		<language>en-US</language>
-		<projectUrl>https://github.com/soroshsabz/PCLAppConfig/tree/develop</projectUrl>
+		<projectUrl>https://github.com/soroshsabz/PCLAppConfig</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
 		<copyright>Copyright  2016</copyright>
