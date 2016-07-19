@@ -12,7 +12,8 @@ Xamarin.Forms PCL:
 
 usage:
 
-- Initialize ConfigurationManager.AppSettings on yout portable project like below
+- Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/PCLAppConfig) to your PCL projects.
+- Initialize ConfigurationManager.AppSettings on your portable project like below
 
 ```
 Assembly assembly = typeof(App).GetTypeInfo().Assembly;
