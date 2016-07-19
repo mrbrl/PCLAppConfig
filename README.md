@@ -15,14 +15,14 @@ usage:
 - Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/PCLAppConfig) to your PCL projects.
 - Initialize ConfigurationManager.AppSettings on your portable project like below
 
-```
+``` C#
 Assembly assembly = typeof(App).GetTypeInfo().Assembly;
 ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
 ```
 
 - Add an app.config on your shared pcl project and ensure that Build Action:EmbeddedResource, and add your appSettings entries, as you would do with any app.config
 
-```
+``` xml
 <configuration>
 	<appSettings>
         <add key="config.text" value="hello from app.settings!" />
@@ -32,8 +32,9 @@ ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifest
 
 - Access your setting:
 
-```
-ConfigurationManager.AppSettings.FirstOrDefault(x => x.Key == "webapiaddress").Value;
+``` C#
+ConfigurationManager.AppSettings["webapiaddress"]; // New API, not available in package yet.
+ConfigurationManager.AppSettings.FirstOrDefault(x => x.Key == "webapiaddress").Value; // Old API currently available on package.
 ```
 
 ## Roadmap
