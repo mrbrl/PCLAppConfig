@@ -35,12 +35,10 @@ ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifest
 ConfigurationManager.AppSettings.FirstOrDefault(x => x.Key == "webapiaddress").Value;
 ```
 
-If you use PCL CoreApp, you can skip points 1,2,3
-
-
 ## Roadmap
 
 - Add navigation examples
+- Add portable filesystem support as provider config file stream
 - Add Xamarin.Forms tdd testing shell (and therefore add the tests that i left out so far)
 
 
