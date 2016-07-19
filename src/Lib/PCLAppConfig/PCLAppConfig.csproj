@@ -39,6 +39,7 @@
     <Compile Include="ConfigurationManager.cs" />
     <Compile Include="Infrastructure\CustomConfigSection.cs" />
     <Compile Include="Infrastructure\Configuration.cs" />
+    <Compile Include="NameValueCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

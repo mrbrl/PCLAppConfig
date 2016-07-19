@@ -17,7 +17,9 @@ namespace DemoApp
 			InitializeComponent();
 
 			Assembly assembly = typeof(App).GetTypeInfo().Assembly;
-			ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
+			ConfigurationManager.InitializeStaticFields(assembly.GetManifestResourceStream("DemoApp.App.config"));
+
+			string testValue = ConfigurationManager.AppSettings["testkey"];
 
 			MainPage = new DemoApp.MainPage();
 		}

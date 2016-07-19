@@ -17,7 +17,7 @@ namespace PCLAppConfig.Infrastructure
     }
 
     [XmlRoot("add")]
-    public class Setting
+    public class Setting : INameValueElement<string>
     {
         [XmlAttribute("key")]
         public string Key { get; set; }
