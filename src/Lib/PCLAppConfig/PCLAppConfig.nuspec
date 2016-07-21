@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0"?>
 <package >
 	<metadata>
-		<id>PCLAppConfig</id>
+		<id>BSN.Common.PCLAppConfig</id>
 		<version>0.2.0-alpha2</version>
-		<title>PCLAppConfig</title>
+		<title>BSN.Common.PCLAppConfig</title>
 		<authors>Ben Ishiyama-levy (Monovo), Seyyed Soroosh Hosseinalipour</authors>
 		<owners></owners>
 		<description>
@@ -26,6 +26,6 @@
 			<dependency id="Humanizer.Core" version="2.0.1"/>
 		</dependencies>
 		<references></references>
-		<tags></tags>
+		<tags>xamarin.forms,PCL</tags>
 	</metadata>
 </package>
