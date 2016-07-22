@@ -48,11 +48,6 @@ namespace DemoApp.UWP
             }
 #endif
 
-			string rootPath = Package.Current.InstalledLocation.Path;
-			string filePath = Path.Combine(rootPath, "App.config");
-
-			bool result = File.Exists(filePath);
-
 			Frame rootFrame = Window.Current.Content as Frame;
 
 			// Do not repeat app initialization when the Window already has content,

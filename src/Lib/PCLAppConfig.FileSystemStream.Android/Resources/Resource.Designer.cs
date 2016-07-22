@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("PCLAppConfig.FileSystemStream.Android.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("PCLAppConfig.FileSystemStream.Resource", IsApplication=false)]
 
-namespace PCLAppConfig.FileSystemStream.Android
+namespace PCLAppConfig.FileSystemStream
 {
 	
 	

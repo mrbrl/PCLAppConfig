@@ -1,14 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{e16b54f1-fdfc-446e-9f15-d3c61f58f70d}</ProjectGuid>
+    <ProjectGuid>{E16B54F1-FDFC-446E-9F15-D3C61F58F70D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PCLAppConfig.FileSystemStream.UWP</RootNamespace>
-    <AssemblyName>PCLAppConfig.FileSystemStream.UWP</AssemblyName>
+    <RootNamespace>PCLAppConfig.FileSystemStream</RootNamespace>
+    <AssemblyName>PCLAppConfig.FileSystemStream</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -107,9 +107,18 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="..\PCLAppConfig.FileSystemStream\PortableStream.cs">
+      <Link>PortableStream.cs</Link>
+    </Compile>
+    <Compile Include="UWPAppConfigPathExtractor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\PCLAppConfig.FileSystemStream.UWP.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
+      <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
+      <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

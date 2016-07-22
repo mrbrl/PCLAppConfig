@@ -10,12 +10,49 @@ namespace PCLAppConfig.FileSystemStream
 {
 	public static class PortableStream
 	{
-		public static async Task<Stream> GetStreamAsync(string path)
+		private static Lazy<Stream> appConfigStream = new Lazy<Stream>(() => CreateAppConfigStream(),
+			System.Threading.LazyThreadSafetyMode.PublicationOnly);
+
+		public static Stream Current
 		{
-			IFile file = FileSystem.Current.LocalStorage.GetFile(path).Result;
+			get
+			{
+				Stream result = appConfigStream.Value;
+				return result;
+			}
+		}
+
+		private static Stream CreateAppConfigStream()
+		{
+			IAppConfigPathExtractor pathExtractor = CreateAppConfigPathExtractor();
+			if (pathExtractor == null)
+				throw new NotImplementedException(@"This functionality is not implemented in the portable version of this assembly.
+												You should reference the PCLAppConfig NuGet package from your main application project
+												in order to reference the platform-specific implementation.");
+
+			return GetStreamAsync(pathExtractor.Path).Result;
+		}
+
+		private static IAppConfigPathExtractor CreateAppConfigPathExtractor()
+		{
+#if ANDROID
+			return new AndroidAppConfigPathExtractor();
+#elif IOS
+			return new IOSAppConfigPathExtractor();
+#elif WINDOWS_UWP
+			return new UWPAppConfigPathExtractor();
+#else
+			return null;
+#endif
+
+		}
+
+		private static async Task<Stream> GetStreamAsync(string path)
+		{
+			IFile file = FileSystem.Current.GetFileFromPath(path).Result;
 			if (file == null)
 				throw new FileNotFoundException($"path: {path}");
-			return await file.OpenAsync(FileAccess.Read);
+			return await file.OpenAsync(PCLStorage.FileAccess.Read);
 		}
 
 		private static async Task<ExistenceCheckResult> CheckExists(this IFolder folder, string path)
