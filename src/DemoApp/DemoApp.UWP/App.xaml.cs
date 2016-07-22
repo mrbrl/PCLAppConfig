@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -46,6 +47,11 @@ namespace DemoApp.UWP
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
 #endif
+
+			string rootPath = Package.Current.InstalledLocation.Path;
+			string filePath = Path.Combine(rootPath, "App.config");
+
+			bool result = File.Exists(filePath);
 
 			Frame rootFrame = Window.Current.Content as Frame;
 

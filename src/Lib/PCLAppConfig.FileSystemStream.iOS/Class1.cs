@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PCLAppConfig.FileSystemStream
+namespace PCLAppConfig.FileSystemStream.iOS
 {
-    public class Class1
-    {
-    }
+	public class Class1
+	{
+	}
 }
