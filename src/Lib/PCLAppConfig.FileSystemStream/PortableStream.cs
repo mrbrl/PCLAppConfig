@@ -30,7 +30,7 @@ namespace PCLAppConfig.FileSystemStream
 												You should reference the PCLAppConfig NuGet package from your main application project
 												in order to reference the platform-specific implementation.");
 
-			return GetStreamAsync(pathExtractor.Path).Result;
+			return GetStream(pathExtractor.Path);
 		}
 
 		private static IAppConfigPathExtractor CreateAppConfigPathExtractor()
@@ -47,12 +47,12 @@ namespace PCLAppConfig.FileSystemStream
 
 		}
 
-		private static async Task<Stream> GetStreamAsync(string path)
+		private static Stream GetStream(string path)
 		{
 			IFile file = FileSystem.Current.GetFileFromPath(path).Result;
 			if (file == null)
 				throw new FileNotFoundException($"path: {path}");
-			return await file.OpenAsync(PCLStorage.FileAccess.Read);
+			return file.Open(PCLStorage.FileAccess.Read).Result;
 		}
 
 		private static async Task<ExistenceCheckResult> CheckExists(this IFolder folder, string path)
@@ -72,6 +72,11 @@ namespace PCLAppConfig.FileSystemStream
 		private static async Task<IFile> GetFileFromPath(this IFileSystem fileSystem, string path)
 		{
 			return await Task.Run(() => fileSystem.GetFileFromPathAsync(path)).ConfigureAwait(false);
+		}
+
+		private static async Task<Stream> Open(this IFile file, PCLStorage.FileAccess fileAccess)
+		{
+			return await Task.Run(() => file.OpenAsync(fileAccess)).ConfigureAwait(false);
 		}
 	}
 }

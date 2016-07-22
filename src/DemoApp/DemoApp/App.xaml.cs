@@ -19,7 +19,7 @@ namespace DemoApp
 
 			Assembly assembly = typeof(App).GetTypeInfo().Assembly;
 			//ConfigurationManager.InitializeStaticFields(assembly.GetManifestResourceStream("DemoApp.ResourceApp.config"));
-			ConfigurationManager.InitializeStaticFields(PortableStream.GetStreamAsync(@"\App.config").Result);
+			ConfigurationManager.InitializeStaticFields(PortableStream.Current);
 
 
 			string testValue = ConfigurationManager.AppSettings["testkey"];
