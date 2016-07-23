@@ -1,0 +1,4 @@
+{
+  "projects": [ "DemoApp", "Lib" ],
+  "sources": [ "Lib/PCLAppConfig.FileSystemStream.UWP", "DemoApp/DemoApp.UWP" ]
+}

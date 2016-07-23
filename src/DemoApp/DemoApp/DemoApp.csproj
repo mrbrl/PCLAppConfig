@@ -54,11 +54,22 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="App.config" />
+    <Content Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
+    <EmbeddedResource Include="ResourceApp.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
+      <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
+      <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream\PCLAppConfig.FileSystemStream.csproj">
+      <Project>{7f2d2561-0f78-4597-9e09-043e757bfce5}</Project>
+      <Name>PCLAppConfig.FileSystemStream</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Lib\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-b785-4fd8-b486-fa157fd55852}</Project>
       <Name>PCLAppConfig</Name>
