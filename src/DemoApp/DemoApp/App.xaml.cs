@@ -7,7 +7,6 @@ using Xamarin.Forms;
 
 using PCLAppConfig;
 using System.Reflection;
-using PCLAppConfig.FileSystemStream;
 
 namespace DemoApp
 {
@@ -19,7 +18,7 @@ namespace DemoApp
 
 			Assembly assembly = typeof(App).GetTypeInfo().Assembly;
 			//ConfigurationManager.InitializeStaticFields(assembly.GetManifestResourceStream("DemoApp.ResourceApp.config"));
-			ConfigurationManager.InitializeStaticFields(PortableStream.Current);
+			ConfigurationManager.InitializeStaticFields(PCLAppConfig.FileSystemStream.PortableStream.Current);
 
 
 			string testValue = ConfigurationManager.AppSettings["testkey"];

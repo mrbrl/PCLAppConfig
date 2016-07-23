@@ -37,7 +37,7 @@ namespace PCLAppConfig.FileSystemStream
 		{
 #if ANDROID
 			return new AndroidAppConfigPathExtractor();
-#elif IOS
+#elif __IOS__
 			return new IOSAppConfigPathExtractor();
 #elif WINDOWS_UWP
 			return new UWPAppConfigPathExtractor();
