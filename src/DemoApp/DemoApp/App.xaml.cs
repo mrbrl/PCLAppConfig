@@ -12,11 +12,7 @@ namespace DemoApp
 
             // Uncomment below to test resource based app config
             // Assembly assembly = typeof(App).GetTypeInfo().Assembly;
-            //ConfigurationManager.InitializeStaticFields(assembly.GetManifestResourceStream("DemoApp.ResourceApp.config"));
-
-            // Uncomment below to test file system based app config
-            // You need to ling the PCL Project app.config in your platform app project
-            ConfigurationManager.InitializeStaticFields(PCLAppConfig.FileSystemStream.PortableStream.Current);
+            //ConfigurationManager.Initialise(assembly.GetManifestResourceStream("DemoApp.ResourceApp.config"));
 
 			MainPage = new MainPage();
 		}

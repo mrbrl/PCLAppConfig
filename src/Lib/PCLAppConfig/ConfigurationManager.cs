@@ -19,17 +19,17 @@ namespace PCLAppConfig
         private readonly Dictionary<string, XDocument> docMap;
         private readonly Stream configurationFile;
 
-        public static void InitializeStaticFields(Stream configurationFile)
+        public static void Initialise(Stream configurationFile)
 		{
 			if (AppSettings != null)
 				throw new TypeInitializationException(nameof(ConfigurationManager),
-					new InvalidOperationException("InitializeStaticFields must be called once in program"));
+					new InvalidOperationException("Initialise must be called once in program"));
 			AppSettings = new NameValueSettings(new ConfigurationManager(configurationFile).LoadSection<Configuration>().Settings);
 		}
 
 		public static NameValueSettings AppSettings { get; set; }
 
-	    private ConfigurationManager(Stream configurationFile)
+	    public ConfigurationManager(Stream configurationFile)
 		{
 			this.configurationFile = configurationFile;
 			this.docMap = new Dictionary<string, XDocument>();

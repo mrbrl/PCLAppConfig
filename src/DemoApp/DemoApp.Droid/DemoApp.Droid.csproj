@@ -27,7 +27,7 @@
     </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+    <DebugSymbols>True</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
@@ -123,8 +123,8 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="..\DemoApp\App.config">
-      <Link>App.config</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Link>Assets\App.config</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
@@ -152,6 +152,10 @@
     <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.Android\PCLAppConfig.FileSystemStream.Android.csproj">
       <Project>{61ababa0-1eb5-44e9-aec1-86430846e590}</Project>
       <Name>PCLAppConfig.FileSystemStream.Android</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\PCLAppConfig\PCLAppConfig.csproj">
+      <Project>{91435741-B785-4FD8-B486-FA157FD55852}</Project>
+      <Name>PCLAppConfig</Name>
     </ProjectReference>
     <ProjectReference Include="..\DemoApp\DemoApp.csproj">
       <Project>{03b96875-a80d-4610-9b73-f3be382314f4}</Project>

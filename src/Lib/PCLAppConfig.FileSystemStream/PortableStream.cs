@@ -23,7 +23,7 @@ namespace PCLAppConfig.FileSystemStream
 			}
 		}
 
-		private static Stream CreateAppConfigStream()
+		public static Stream CreateAppConfigStream()
 		{
 			var pathExtractor = CreateAppConfigPathExtractor();
 			if (pathExtractor == null)
@@ -34,7 +34,7 @@ namespace PCLAppConfig.FileSystemStream
 			return GetStream(pathExtractor.Path);
 		}
 
-		private static IAppConfigPathExtractor CreateAppConfigPathExtractor()
+		public static IAppConfigPathExtractor CreateAppConfigPathExtractor()
 		{
 #if ANDROID
 			return new AndroidAppConfigPathExtractor();

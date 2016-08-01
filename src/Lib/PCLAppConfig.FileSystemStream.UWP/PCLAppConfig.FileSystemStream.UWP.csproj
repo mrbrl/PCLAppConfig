@@ -7,8 +7,8 @@
     <ProjectGuid>{E16B54F1-FDFC-446E-9F15-D3C61F58F70D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PCLAppConfig.FileSystemStream</RootNamespace>
-    <AssemblyName>PCLAppConfig.FileSystemStream</AssemblyName>
+    <RootNamespace>PCLAppConfig.FileSystemStream.UWP</RootNamespace>
+    <AssemblyName>PCLAppConfig.FileSystemStream.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>

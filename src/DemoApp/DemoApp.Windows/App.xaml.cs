@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
+using PCLAppConfig;
 
 // The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
@@ -64,7 +65,9 @@ namespace DemoApp.Windows
 
 				Xamarin.Forms.Forms.Init(e);
 
-				if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+
+                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
 				{
 					// TODO: Load state from previously suspended application
 				}

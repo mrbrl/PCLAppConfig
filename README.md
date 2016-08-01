@@ -13,17 +13,42 @@ Xamarin.Forms PCL:
 usage:
 
 - Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/PCLAppConfig) to your PCL projects.
-- Initialize ConfigurationManager.AppSettings on your portable project like below
 
 ### FOR FILE SYSTEM  APP.CONFIG
+- Initialize ConfigurationManager.AppSettings on each of your  platform project, just after  'Xamarin.Forms.Forms.Init'  like below:
+
+#### iOS (AppDelegate.cs)
 ``` C#
-ConfigurationManager.InitializeStaticFields(PCLAppConfig.FileSystemStream.PortableStream.Current);
+  global::Xamarin.Forms.Forms.Init();
+
+   ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+
+    LoadApplication(new App());
 ```
+
+#### Android (MainActivity.cs)
+``` C#
+  global::Xamarin.Forms.Forms.Init(this, bundle);
+
+   ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+
+    LoadApplication(new App());
+```
+
+#### UWP / Windows 8.1 / WP 8.1 (App.xaml.cs)
+``` C#
+	Xamarin.Forms.Forms.Init(e);
+
+    ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+```
+
 - Add an app.config on your shared pcl project, and add your appSettings entries, as you would do with any app.config
-- Add this PCL app.config file as a linked file on all your paltform projects. For android, make sure to set the build action to  'AndroidAsset'
+- Add this PCL app.config file as a linked file on all your platform projects. For android, make sure to set the build action to  'AndroidAsset'
 
 
 ### FOR EMBEDDED APP.CONFIG
+- Initialize ConfigurationManager.AppSettings on your pcl project like below:
+
 ``` C#
 Assembly assembly = typeof(App).GetTypeInfo().Assembly;
 ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
@@ -48,6 +73,7 @@ ConfigurationManager.AppSettings["webapiaddress"];
 
 ## Roadmap
 
+- Complete fs config for windows 8.1 & WP 8.1
 - Add Tests
 
 

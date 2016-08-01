@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using PCLAppConfig;
 
 namespace DemoApp.Droid
 {
@@ -14,13 +15,16 @@ namespace DemoApp.Droid
 	{
 		protected override void OnCreate(Bundle bundle)
 		{
-			TabLayoutResource = Resource.Layout.Tabbar;
+            TabLayoutResource = Resource.Layout.Tabbar;
 			ToolbarResource = Resource.Layout.Toolbar;
 
 			base.OnCreate(bundle);
 
-			global::Xamarin.Forms.Forms.Init(this, bundle);
-			LoadApplication(new App());
+            global::Xamarin.Forms.Forms.Init(this, bundle);
+
+            ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+
+            LoadApplication(new App());
 		}
 	}
 }

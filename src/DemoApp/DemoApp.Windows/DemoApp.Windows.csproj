@@ -117,6 +117,9 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="..\DemoApp\App.config">
+      <Link>App.config</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
@@ -136,6 +139,14 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream\PCLAppConfig.FileSystemStream.csproj">
+      <Project>{7f2d2561-0f78-4597-9e09-043e757bfce5}</Project>
+      <Name>PCLAppConfig.FileSystemStream</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Lib\PCLAppConfig\PCLAppConfig.csproj">
+      <Project>{91435741-b785-4fd8-b486-fa157fd55852}</Project>
+      <Name>PCLAppConfig</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DemoApp\DemoApp.csproj">
       <Project>{03b96875-a80d-4610-9b73-f3be382314f4}</Project>
       <Name>DemoApp</Name>

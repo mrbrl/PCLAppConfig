@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using PCLAppConfig;
 
 namespace DemoApp.UWP
 {
@@ -61,13 +62,15 @@ namespace DemoApp.UWP
 
 				Xamarin.Forms.Forms.Init(e);
 
-				if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
+                ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+
+                if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
 				{
 					//TODO: Load state from previously suspended application
 				}
 
-				// Place the frame in the current Window
-				Window.Current.Content = rootFrame;
+                // Place the frame in the current Window
+                Window.Current.Content = rootFrame;
 			}
 
 			if (rootFrame.Content == null)
