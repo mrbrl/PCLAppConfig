@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 using PCLAppConfig;
-using System.Reflection;
 
 namespace DemoApp
 {
@@ -16,29 +10,15 @@ namespace DemoApp
 		{
 			InitializeComponent();
 
-			Assembly assembly = typeof(App).GetTypeInfo().Assembly;
-			//ConfigurationManager.InitializeStaticFields(assembly.GetManifestResourceStream("DemoApp.ResourceApp.config"));
-			ConfigurationManager.InitializeStaticFields(PCLAppConfig.FileSystemStream.PortableStream.Current);
+            // Uncomment below to test resource based app config
+            // Assembly assembly = typeof(App).GetTypeInfo().Assembly;
+            //ConfigurationManager.InitializeStaticFields(assembly.GetManifestResourceStream("DemoApp.ResourceApp.config"));
 
+            // Uncomment below to test file system based app config
+            // You need to ling the PCL Project app.config in your platform app project
+            ConfigurationManager.InitializeStaticFields(PCLAppConfig.FileSystemStream.PortableStream.Current);
 
-			string testValue = ConfigurationManager.AppSettings["testkey"];
-
-			MainPage = new DemoApp.MainPage();
-		}
-
-		protected override void OnStart()
-		{
-			// Handle when your app starts
-		}
-
-		protected override void OnSleep()
-		{
-			// Handle when your app sleeps
-		}
-
-		protected override void OnResume()
-		{
-			// Handle when your app resumes
+			MainPage = new MainPage();
 		}
 	}
 }

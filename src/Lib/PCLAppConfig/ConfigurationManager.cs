@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Linq;
 using System.Xml.Serialization;
-using Humanizer;
+using PCLAppConfig.Extensions;
 using PCLAppConfig.Infrastructure;
 
 namespace PCLAppConfig
@@ -14,7 +14,12 @@ namespace PCLAppConfig
 
 	public class ConfigurationManager
 	{
-		public static void InitializeStaticFields(Stream configurationFile)
+        private const string ROOT_ELEMENT = "configuration";
+        private const string CONFIG_APP_DEFAULT_PATH = "App.config";
+        private readonly Dictionary<string, XDocument> docMap;
+        private readonly Stream configurationFile;
+
+        public static void InitializeStaticFields(Stream configurationFile)
 		{
 			if (AppSettings != null)
 				throw new TypeInitializationException(nameof(ConfigurationManager),
@@ -24,7 +29,7 @@ namespace PCLAppConfig
 
 		public static NameValueSettings AppSettings { get; set; }
 
-		public ConfigurationManager(Stream configurationFile)
+	    private ConfigurationManager(Stream configurationFile)
 		{
 			this.configurationFile = configurationFile;
 			this.docMap = new Dictionary<string, XDocument>();
@@ -42,7 +47,7 @@ namespace PCLAppConfig
 			}
 		}
 
-		public T LoadSection<T>()
+		private T LoadSection<T>()
 		{
 			// load custom sections
 			// skip custom element if root is configuration
@@ -93,12 +98,5 @@ namespace PCLAppConfig
 				this.docMap.Add(configPath, doc);
 			}
 		}
-
-		private const string ROOT_ELEMENT = "configuration";
-		private const string CONFIG_APP_DEFAULT_PATH = "App.config";
-
-		private readonly Dictionary<string, XDocument> docMap;
-
-		private readonly Stream configurationFile; 
 	}   
 }
