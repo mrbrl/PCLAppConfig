@@ -12,9 +12,18 @@ Xamarin.Forms PCL:
 
 usage:
 
-- Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/BSN.Common.PCLAppConfig) to your PCL projects.
+- Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/PCLAppConfig) to your PCL projects.
 - Initialize ConfigurationManager.AppSettings on your portable project like below
 
+### FOR FILE SYSTEM  APP.CONFIG
+``` C#
+ConfigurationManager.InitializeStaticFields(PCLAppConfig.FileSystemStream.PortableStream.Current);
+```
+- Add an app.config on your shared pcl project, and add your appSettings entries, as you would do with any app.config
+- Add this PCL app.config file as a linked file on all your paltform projects. For android, make sure to set the build action to  'AndroidAsset'
+
+
+### FOR EMBEDDED APP.CONFIG
 ``` C#
 Assembly assembly = typeof(App).GetTypeInfo().Assembly;
 ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
@@ -33,15 +42,13 @@ ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifest
 - Access your setting:
 
 ``` C#
-ConfigurationManager.AppSettings["webapiaddress"]; // New API, not available in package yet.
-ConfigurationManager.AppSettings.FirstOrDefault(x => x.Key == "webapiaddress").Value; // Old API currently available on package.
+ConfigurationManager.AppSettings["webapiaddress"];
+
 ```
 
 ## Roadmap
 
-- Add navigation examples
-- Add portable filesystem support as provider config file stream
-- Add Xamarin.Forms tdd testing shell (and therefore add the tests that i left out so far)
+- Add Tests
 
 
 Comments and suggestions are welcomed!
