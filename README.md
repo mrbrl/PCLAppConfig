@@ -43,7 +43,7 @@ usage:
 ```
 
 - Add an app.config on your shared pcl project, and add your appSettings entries, as you would do with any app.config
-- Add this PCL app.config file as a linked file on all your platform projects. For android, make sure to set the build action to  'AndroidAsset'
+- Add this PCL app.config file as a linked file on all your platform projects. For android, make sure to set the build action to  'AndroidAsset', for UWP set the build action to 'Content'
 
 
 ### FOR EMBEDDED APP.CONFIG

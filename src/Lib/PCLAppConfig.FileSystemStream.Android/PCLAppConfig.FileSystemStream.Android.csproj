@@ -32,7 +32,7 @@
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>ANDROID</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
@@ -123,6 +123,10 @@
     <ProjectReference Include="..\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
       <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
       <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PCLAppConfig\PCLAppConfig.csproj">
+      <Project>{91435741-b785-4fd8-b486-fa157fd55852}</Project>
+      <Name>PCLAppConfig</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

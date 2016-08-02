@@ -55,6 +55,10 @@
       <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
       <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PCLAppConfig\PCLAppConfig.csproj">
+      <Project>{91435741-b785-4fd8-b486-fa157fd55852}</Project>
+      <Name>PCLAppConfig</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

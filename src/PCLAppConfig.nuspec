@@ -1,0 +1,55 @@
+﻿<?xml version="1.0"?>
+<package >
+	<metadata>
+		<id>PCLAppConfig</id>
+		<version>0.3</version>
+		<title>PCL AppConfig - Portable AppSettings Reader</title>
+		<authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</authors>
+		<owners>Ben Ishiyama-levy (Xamariners)</owners>
+		<description>
+			Cross platform Xamarin AppSettings reader
+		</description>
+		<releaseNotes>
+			- Initial Release
+		</releaseNotes>
+		<summary>
+			Cross platform Xamarin AppSettings reader
+		</summary>
+		<language>en-US</language>
+		<projectUrl>https://github.com/mrbrl/PCLAppConfig</projectUrl>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
+		<copyright>Copyright Xamariners 2016</copyright>	
+		<tags>xamarin xamarin.forms PCL Config AppConfig AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</tags>
+    <dependencies>
+      <dependency id="PCLStorage" version="1.0.2"/>
+    </dependencies>
+	</metadata>
+	<files>
+    <!-- portable -->
+    <file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.dll" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.dll" />
+    
+    <!-- ios -->
+    <file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.dll" target="lib\Xamarin.iOS\PCLAppConfig.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.iOS.dll" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.iOS.dll" />
+
+    <!-- classic ios -->
+    <file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.dll" target="lib\MonoTouch10\PCLAppConfig.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.iOS.dll" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.iOS.dll" />
+    
+    <!-- android -->
+    <file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.dll" target="lib\MonoAndroid10\PCLAppConfig.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.Android.dll" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.Android.dll" />
+    
+    <!-- UWP -->
+    <file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.dll" target="lib\UAP10\PCLAppConfig.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\UAP10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+    <file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.UWP.dll" target="lib\UAP10\PCLAppConfig.FileSystemStream.UWP.dll" />
+
+  </files>
+</package>
