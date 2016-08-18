@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>PCLAppConfig</id>
-		<version>0.3</version>
+		<version>0.3.1</version>
 		<title>PCL AppConfig - Portable AppSettings Reader</title>
 		<authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</authors>
 		<owners>Ben Ishiyama-levy (Xamariners)</owners>
@@ -10,7 +10,8 @@
 			Cross platform Xamarin AppSettings reader
 		</description>
 		<releaseNotes>
-			- Initial Release
+			- 0.3.1: Added tests and package icon
+			- 0.3.0: Initial Release			
 		</releaseNotes>
 		<summary>
 			Cross platform Xamarin AppSettings reader
