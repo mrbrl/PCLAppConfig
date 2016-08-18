@@ -15,7 +15,7 @@ namespace DemoApp
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
       
-        private string _configText;
+        private string _configText = "";
 
         public ICommand PclSettingCommand => new Command(() => GetPclSetting());
 

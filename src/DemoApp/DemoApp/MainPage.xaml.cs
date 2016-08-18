@@ -13,8 +13,17 @@ namespace DemoApp
 	{
 		public MainPage()
 		{
-			InitializeComponent();
-		    BindingContext = new MainViewModel();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (InvalidOperationException soe)
+            {
+                if (!soe.Message.Contains("MUST"))
+                    throw;
+            }
+
+            BindingContext = new MainViewModel();
 		}
     }
 }

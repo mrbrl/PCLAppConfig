@@ -20,7 +20,8 @@
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
 		<copyright>Copyright Xamariners 2016</copyright>	
-		<tags>xamarin xamarin.forms PCL Config AppConfig AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</tags>
+		<tags>xamarin xamarin.forms PCL Config App.Config AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</tags>
+		<iconUrl>https://avatars2.githubusercontent.com/u/2474918</iconUrl>
     <dependencies>
       <dependency id="PCLStorage" version="1.0.2"/>
     </dependencies>
