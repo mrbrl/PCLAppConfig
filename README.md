@@ -1,16 +1,12 @@
 # PCLAppConfig
 
 
-Created for a xamarin demo at MSFT Singapore on 27/04/2016
-
-
 Xamarin.Forms PCL:
 
 	- PCL AppConfig : cross platfom xamarin forms app settings reader
 	
-## PCL AppConfig
+## Usage
 
-usage:
 
 - Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/PCLAppConfig) to your PCL projects.
 
@@ -19,27 +15,27 @@ usage:
 
 #### iOS (AppDelegate.cs)
 ``` C#
-  global::Xamarin.Forms.Forms.Init();
+	Xamarin.Forms.Forms.Init();
 
-   ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+	ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
 
-    LoadApplication(new App());
+	LoadApplication(new App());
 ```
 
 #### Android (MainActivity.cs)
 ``` C#
-  global::Xamarin.Forms.Forms.Init(this, bundle);
+  Xamarin.Forms.Forms.Init(this, bundle);
 
-   ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+  ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
 
-    LoadApplication(new App());
+  LoadApplication(new App());
 ```
 
 #### UWP / Windows 8.1 / WP 8.1 (App.xaml.cs)
 ``` C#
 	Xamarin.Forms.Forms.Init(e);
 
-    ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+	ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
 ```
 
 - Add an app.config on your shared pcl project, and add your appSettings entries, as you would do with any app.config
@@ -50,8 +46,8 @@ usage:
 - Initialize ConfigurationManager.AppSettings on your pcl project like below:
 
 ``` C#
-Assembly assembly = typeof(App).GetTypeInfo().Assembly;
-ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
+	Assembly assembly = typeof(App).GetTypeInfo().Assembly;
+	ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
 ```
 
 - Add an app.config on your shared pcl project and ensure that Build Action:EmbeddedResource, and add your appSettings entries, as you would do with any app.config
@@ -67,7 +63,7 @@ ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifest
 - Access your setting:
 
 ``` C#
-ConfigurationManager.AppSettings["webapiaddress"];
+	ConfigurationManager.AppSettings["config.text"];
 
 ```
 
