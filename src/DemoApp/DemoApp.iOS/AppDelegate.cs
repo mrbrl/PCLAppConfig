@@ -25,6 +25,7 @@ namespace DemoApp.iOS
 		{
             global::Xamarin.Forms.Forms.Init();
 
+            // comment below to test file based app config
             ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
 
             LoadApplication(new App());

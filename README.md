@@ -8,7 +8,7 @@ Xamarin.Forms PCL:
 ## Usage
 
 
-- Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/PCLAppConfig) to your PCL projects.
+- Install PCLAppConfig package from [nuget](https://www.nuget.org/packages/PCLAppConfig) to your PCL and each target projects.
 
 ### FOR FILE SYSTEM  APP.CONFIG
 - Initialize ConfigurationManager.AppSettings on each of your  platform project, just after  'Xamarin.Forms.Forms.Init'  like below:
@@ -47,7 +47,7 @@ Xamarin.Forms PCL:
 
 ``` C#
 	Assembly assembly = typeof(App).GetTypeInfo().Assembly;
-	ConfigurationManager.AppSettings = new ConfigurationManager(assembly.GetManifestResourceStream("DemoApp.App.config")).GetAppSettings;
+    ConfigurationManager.Initialise(assembly.GetManifestResourceStream("DemoApp.App.config"));	
 ```
 
 - Add an app.config on your shared pcl project and ensure that Build Action:EmbeddedResource, and add your appSettings entries, as you would do with any app.config

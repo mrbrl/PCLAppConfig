@@ -22,6 +22,7 @@ namespace DemoApp.Droid
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
+            // comment below to test file based app config
             ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
 
             LoadApplication(new App());
