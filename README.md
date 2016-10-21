@@ -67,6 +67,12 @@ Xamarin.Forms PCL:
 
 ```
 
+## Author
+- Ben Ishiyama-levy (Xamariners)
+
+## Contributors
+- Seyyed Soroosh Hosseinalipour
+
 ## Roadmap
 
 - Complete fs config for windows 8.1 & WP 8.1
