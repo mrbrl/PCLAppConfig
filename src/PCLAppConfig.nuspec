@@ -10,7 +10,7 @@
 			Cross platform Xamarin AppSettings reader
 		</description>
 		<releaseNotes>
-						- 0.3.2: Update to latest dependencies, Update Doc
+			- 0.3.2: Update to latest dependencies, Update Doc
 			- 0.3.1: Added tests and package icon
 			- 0.3.0: Initial Release			
 		</releaseNotes>
@@ -37,22 +37,22 @@
 		<!-- ios -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.dll" target="lib\Xamarin.iOS\PCLAppConfig.dll" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.Abstractions.dll" />
-		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.iOS.dll" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.iOS.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.dll" />
 
 		<!-- classic ios -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.dll" target="lib\MonoTouch10\PCLAppConfig.dll" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
-		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.iOS.dll" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.iOS.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.dll" />
 		
 		<!-- android -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.dll" target="lib\MonoAndroid10\PCLAppConfig.dll" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
-		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.Android.dll" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.Android.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.dll" />
 		
 		<!-- UWP -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.dll" target="lib\UAP10\PCLAppConfig.dll" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\UAP10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
-		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.UWP.dll" target="lib\UAP10\PCLAppConfig.FileSystemStream.UWP.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\UAP10\PCLAppConfig.FileSystemStream.dll" />
 
 	</files>
 </package>
