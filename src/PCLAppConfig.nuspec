@@ -32,28 +32,52 @@
 	<files>
 		<!-- portable -->
 		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.dll" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.xml" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.pdb" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.pdb" />
 		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.xml" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.pdb" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.pdb" />
 		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.xml" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream\bin\Release\PCLAppConfig.FileSystemStream.pdb" target="lib\portable-net45+win+wpa81+wp80+MonoAndroid10+xamarinios10+MonoTouch10\PCLAppConfig.FileSystemStream.pdb" />
 		
 		<!-- ios -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.dll" target="lib\Xamarin.iOS\PCLAppConfig.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.xml" target="lib\Xamarin.iOS\PCLAppConfig.xml" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.xml" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.Abstractions.xml" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.xml" target="lib\Xamarin.iOS\PCLAppConfig.FileSystemStream.xml" />
 
 		<!-- classic ios -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.dll" target="lib\MonoTouch10\PCLAppConfig.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.xml" target="lib\MonoTouch10\PCLAppConfig.xml" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.xml" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.Abstractions.xml" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.iOS\bin\Release\PCLAppConfig.FileSystemStream.xml" target="lib\MonoTouch10\PCLAppConfig.FileSystemStream.xml" />
 		
 		<!-- android -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.dll" target="lib\MonoAndroid10\PCLAppConfig.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.xml" target="lib\MonoAndroid10\PCLAppConfig.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.pdb" target="lib\MonoAndroid10\PCLAppConfig.pdb" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.xml" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.Abstractions.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.pdb" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.Abstractions.pdb" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.xml" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.Android\bin\Release\PCLAppConfig.FileSystemStream.pdb" target="lib\MonoAndroid10\PCLAppConfig.FileSystemStream.pdb" />
 		
 		<!-- UWP -->
 		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.dll" target="lib\UAP10\PCLAppConfig.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.xml" target="lib\UAP10\PCLAppConfig.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.pdb" target="lib\UAP10\PCLAppConfig.pdb" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.dll" target="lib\UAP10\PCLAppConfig.FileSystemStream.Abstractions.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.xml" target="lib\UAP10\PCLAppConfig.FileSystemStream.Abstractions.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.Abstractions.pdb" target="lib\UAP10\PCLAppConfig.FileSystemStream.Abstractions.pdb" />
 		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.dll" target="lib\UAP10\PCLAppConfig.FileSystemStream.dll" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.xml" target="lib\UAP10\PCLAppConfig.FileSystemStream.xml" />
+		<file src="Lib\PCLAppConfig.FileSystemStream.UWP\bin\Release\PCLAppConfig.FileSystemStream.pdb" target="lib\UAP10\PCLAppConfig.FileSystemStream.pdb" />
 
 	</files>
 </package>
