@@ -49,8 +49,8 @@ namespace PCLAppConfig
 
 		private T LoadSection<T>()
 		{
-			// load custom sections
-			// skip custom element if root is configuration
+			// Load custom sections
+			// Skip custom element if root is configuration
 			var sectionName = typeof(T).Name.ToLower() == ROOT_ELEMENT ? null : typeof(T).Name.Camelize();
 			var section = GetSection(sectionName, null);
 
