@@ -7,8 +7,8 @@
     <ProjectGuid>{E16B54F1-FDFC-446E-9F15-D3C61F58F70D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PCLAppConfig.FileSystemStream.UWP</RootNamespace>
-    <AssemblyName>PCLAppConfig.FileSystemStream.UWP</AssemblyName>
+    <RootNamespace>PCLAppConfig.FileSystemStream</RootNamespace>
+    <AssemblyName>PCLAppConfig.FileSystemStream</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
@@ -110,8 +110,10 @@
     <Compile Include="..\PCLAppConfig.FileSystemStream\PortableStream.cs">
       <Link>PortableStream.cs</Link>
     </Compile>
+    <Compile Include="..\PCLAppConfig.FileSystemStream\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="UWPAppConfigPathExtractor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\PCLAppConfig.FileSystemStream.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
