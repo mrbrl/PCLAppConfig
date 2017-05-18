@@ -26,10 +26,10 @@ Xamarin.Forms PCL:
 
 ``` C#
 	Assembly assembly = typeof(App).GetTypeInfo().Assembly;
-    ConfigurationManager.Initialise(assembly.GetManifestResourceStream("DemoApp.App.config"));	
+	ConfigurationManager.Initialise(assembly.GetManifestResourceStream("DemoApp.App.config"));	
 ```
 
-- Add an app.config on your shared pcl project and ensure that Build Action:EmbeddedResource, and add your appSettings entries, as you would do with any app.config
+- Add an App.config on your shared pcl project and ensure that Build Action:EmbeddedResource, and add your appSettings entries, as you would do with any App.config
 
 ``` xml
 <configuration>
