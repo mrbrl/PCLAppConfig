@@ -10,26 +10,25 @@ namespace PCLAppConfig.FileSystemStream
 {
 	public class AndroidAppConfigPathExtractor : IAppConfigPathExtractor
 	{
-		public string Path
+	    private const string CONFIG_APP_DEFAULT_PATH = "App.config";
+        public string Path
 		{
 			get
 			{
 				string configFromOriginalFile;
 				try
 				{
-					using (StreamReader streamReader = new StreamReader(Xamarin.Forms.Forms.Context.Assets.Open("App.config")))
-					{
-						configFromOriginalFile = streamReader.ReadToEnd();
-					}
+				    using (var sr = new StreamReader(Android.App.Application.Context.Assets.Open(CONFIG_APP_DEFAULT_PATH)))
+				        configFromOriginalFile = sr.ReadToEnd();
 				}
 				catch
 				{
-					throw new FileNotFoundException(@"please link the 'App.config' file from your shared pcl project to
+					throw new FileNotFoundException($@"please link the '{CONFIG_APP_DEFAULT_PATH}' file from your shared pcl project to
 													the 'Assets' directory of your android project, with build action
 													'AndroidAsset'");
 				}
 
-				IFile file = FileSystem.Current.LocalStorage.CreateFileAsync("App.config", CreationCollisionOption.ReplaceExisting).Result;
+				IFile file = FileSystem.Current.LocalStorage.CreateFileAsync(CONFIG_APP_DEFAULT_PATH, CreationCollisionOption.ReplaceExisting).Result;
 				file.WriteAllTextAsync(configFromOriginalFile).Wait();
 
 				return file.Path;

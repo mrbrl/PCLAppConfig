@@ -80,3 +80,9 @@ markup/
 dev/
 /src/Lib/PCLAppConfig/nuget.exe
 *.nupkg
+*.ide-wal
+*.ide-shm
+*.ide
+*.lock
+*.lock.json
+*.Resource.Designer

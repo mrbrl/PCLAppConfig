@@ -24,6 +24,7 @@ namespace PCLAppConfig
 			if (AppSettings != null)
 				throw new TypeInitializationException(nameof(ConfigurationManager),
 					new InvalidOperationException("Initialize must be called once in program"));
+
 			AppSettings = new NameValueSettings(new ConfigurationManager(configurationFile).LoadSection<Configuration>().Settings);
 		}
 
@@ -85,7 +86,7 @@ namespace PCLAppConfig
 			var doc = this.docMap[configPath];
 
 			var section = string.IsNullOrEmpty(sectionName) ? doc.Element(ROOT_ELEMENT)
-				: doc.Element(ROOT_ELEMENT).Element(sectionName);
+				: doc?.Element(ROOT_ELEMENT)?.Element(sectionName);
 
 			return new CustomConfigSection() { Element = section };
 		}

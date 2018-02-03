@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>PCLAppConfig</id>
-		<version>0.3.3</version>
+		<version>0.3.4</version>
 		<title>PCL AppConfig - Portable AppSettings Reader</title>
 		<authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</authors>
 		<owners>Ben Ishiyama-levy (Xamariners)</owners>
@@ -10,11 +10,12 @@
 			Cross platform Xamarin AppSettings reader
 		</description>
 		<releaseNotes>
-			- 0.3.3: ProtableStream.Current now can be use in PCL project.
-			- 0.3.2: Update to latest dependencies, Update Doc
-			- 0.3.1: Added tests and package icon
-			- 0.3.0: Initial Release			
-		</releaseNotes>
+		  - 0.3.4: ProtableStream.Current now can be use in PCL project.
+      - 0.3.3: ProtableStream.Current now can be use in PCL project.
+      - 0.3.2: Update to latest dependencies, Update Doc
+      - 0.3.1: Added tests and package icon
+      - 0.3.0: Initial Release
+    </releaseNotes>
 		<summary>
 			Cross platform Xamarin AppSettings reader
 		</summary>
@@ -22,7 +23,7 @@
 		<projectUrl>https://github.com/mrbrl/PCLAppConfig</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-		<copyright>Copyright Xamariners 2016</copyright>	
+		<copyright>Copyright Xamariners 2018</copyright>	
 		<tags>xamarin xamarin.forms PCL Config App.Config AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</tags>
 		<iconUrl>https://avatars2.githubusercontent.com/u/2474918</iconUrl>
 		<dependencies>

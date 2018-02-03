@@ -7,7 +7,7 @@ using System.Text;
 namespace PCLAppConfig.FileSystemStream
 {
 	public class IOSAppConfigPathExtractor : IAppConfigPathExtractor
-	{
+	{   
 		public string Path
 		{
 			get
