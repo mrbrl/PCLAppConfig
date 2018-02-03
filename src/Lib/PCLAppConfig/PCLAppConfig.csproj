@@ -38,9 +38,9 @@
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
-  <PropertyGroup>
+<!--  <PropertyGroup>
     <AssemblyOriginatorKeyFile>PCLAppConfig.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+  </PropertyGroup> -->
   <ItemGroup>
     <Compile Include="ConfigurationManager.cs" />
     <Compile Include="Extensions\StringExtensions.cs" />

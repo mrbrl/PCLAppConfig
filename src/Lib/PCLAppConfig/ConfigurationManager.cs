@@ -14,22 +14,22 @@ namespace PCLAppConfig
 
 	public class ConfigurationManager
 	{
-        private const string ROOT_ELEMENT = "configuration";
-        private const string CONFIG_APP_DEFAULT_PATH = "App.config";
-        private readonly Dictionary<string, XDocument> docMap;
-        private readonly Stream configurationFile;
+		private const string ROOT_ELEMENT = "configuration";
+		private const string CONFIG_APP_DEFAULT_PATH = "App.config";
+		private readonly Dictionary<string, XDocument> docMap;
+		private readonly Stream configurationFile;
 
-        public static void Initialise(Stream configurationFile)
+		public static void Initialise(Stream configurationFile)
 		{
 			if (AppSettings != null)
 				throw new TypeInitializationException(nameof(ConfigurationManager),
-					new InvalidOperationException("Initialise must be called once in program"));
+					new InvalidOperationException("Initialize must be called once in program"));
 			AppSettings = new NameValueSettings(new ConfigurationManager(configurationFile).LoadSection<Configuration>().Settings);
 		}
 
 		public static NameValueSettings AppSettings { get; set; }
 
-	    public ConfigurationManager(Stream configurationFile)
+		public ConfigurationManager(Stream configurationFile)
 		{
 			this.configurationFile = configurationFile;
 			this.docMap = new Dictionary<string, XDocument>();
@@ -49,8 +49,8 @@ namespace PCLAppConfig
 
 		private T LoadSection<T>()
 		{
-			// load custom sections
-			// skip custom element if root is configuration
+			// Load custom sections
+			// Skip custom element if root is configuration
 			var sectionName = typeof(T).Name.ToLower() == ROOT_ELEMENT ? null : typeof(T).Name.Camelize();
 			var section = GetSection(sectionName, null);
 

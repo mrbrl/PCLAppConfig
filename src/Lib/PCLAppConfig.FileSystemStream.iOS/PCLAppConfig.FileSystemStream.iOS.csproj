@@ -8,9 +8,9 @@
     <ProjectGuid>{C556294C-E117-469D-9A53-CC215DBA4EB9}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <RootNamespace>PCLAppConfig.FileSystemStream.iOS</RootNamespace>
+    <RootNamespace>PCLAppConfig.FileSystemStream</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>PCLAppConfig.FileSystemStream.iOS</AssemblyName>
+    <AssemblyName>PCLAppConfig.FileSystemStream</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -51,8 +51,10 @@
     <Compile Include="..\PCLAppConfig.FileSystemStream\PortableStream.cs">
       <Link>PortableStream.cs</Link>
     </Compile>
+    <Compile Include="..\PCLAppConfig.FileSystemStream\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="IOSAppConfigPathExtractor.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
