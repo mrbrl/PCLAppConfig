@@ -11,13 +11,14 @@
     <AssemblyName>DemoApp.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.10586.0</TargetPlatformMinVersion>
+    <TargetPlatformVersion>10.0.17134.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.17134.0</TargetPlatformMinVersion>
     <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
     <EnableDotNetNativeCompatibleProfile>true</EnableDotNetNativeCompatibleProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>Windows_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <RuntimeIdentifiers>win10-arm;win10-arm-aot;win10-x86;win10-x86-aot;win10-x64;win10-x64-aot</RuntimeIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
@@ -94,7 +95,6 @@
       <Link>App.config</Link>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -132,14 +132,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
-      <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
-      <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.UWP\PCLAppConfig.FileSystemStream.UWP.csproj">
-      <Project>{e16b54f1-fdfc-446e-9f15-d3c61f58f70d}</Project>
-      <Name>PCLAppConfig.FileSystemStream.UWP</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Lib\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-b785-4fd8-b486-fa157fd55852}</Project>
       <Name>PCLAppConfig</Name>
@@ -148,6 +140,17 @@
       <Project>{03b96875-a80d-4610-9b73-f3be382314f4}</Project>
       <Name>DemoApp</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.1.4</Version>
+    </PackageReference>
+    <PackageReference Include="PCLStorage">
+      <Version>1.0.2</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.Forms">
+      <Version>3.0.0.482510</Version>
+    </PackageReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

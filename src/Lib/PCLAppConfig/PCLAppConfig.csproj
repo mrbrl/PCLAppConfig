@@ -1,76 +1,93 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{91435741-B785-4FD8-B486-FA157FD55852}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PCLAppConfig</RootNamespace>
+    <!--Update with your target such as: Xamarin.iOS10 or MonoAndroid80 or Xamarin.Mac20-->
+    <!--<TargetFramework>Xamarin.iOS10</TargetFramework>-->
+        
+    <!--To Multi-target you can do this-->
+    <TargetFrameworks>MonoAndroid80;Xamarin.iOS10;uap10.0;netstandard2.0</TargetFrameworks>
+
+    <!--<TargetFramework>Xamarin.iOS10</TargetFramework>-->
+    
+    <!--Assembly and Namespace info -->
     <AssemblyName>PCLAppConfig</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile111</TargetFrameworkProfile>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <RootNamespace>PCLAppConfig</RootNamespace>
+
+    <PackageId>PCLAppConfig</PackageId>    
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>1.0.0.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+
+    <!--<PackageProjectUrl>https://github.com/mrbrl/PCLAppConfig</PackageProjectUrl>
+    <PackageLicenseUrl>http://opensource.org/licenses/Apache-2.0</PackageLicenseUrl>
+    <PackageTags>xamarin xamarin.forms PCL Config App.Config AppSettings Configuration ConfigurationManager uwp android ios xamarin monoandroid monodroid monotouch xamariners</PackageTags>
+    <PackageIconUrl>https://avatars2.githubusercontent.com/u/2474918</PackageIconUrl>
+    <PackageReleaseNotes>
+      - 1.0.0: Welcome to .Net Standard
+      - 0.3.4: ProtableStream.Current now can be use in PCL project      -
+      - 0.3.2: Update to latest dependencies, Update Doc
+      - 0.3.1: Added tests and package icon
+      - 0.3.0: Initial Release
+    </PackageReleaseNotes>-->
+    
+    <!--Don't auto add files for me, I will tell you -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+   
+    <!-- Helper to add defines-->
+    <DefineConstants>$(DefineConstants);</DefineConstants>    
+    
+    <!--Assembly and Namespace info -->
+    
+    <!--Version of C# to use -->
+    <LangVersion>default</LangVersion>
+    
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
+  
+  <!-- Define what happens on build and release -->
+   <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+  
+  <PropertyGroup Condition=" '$(Configuration)'=='Release' ">
     <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
+    <!-- If we want a nuget package add this
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+     -->
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>false</SignAssembly>
-  </PropertyGroup>
-  <!--  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>PCLAppConfig.pfx</AssemblyOriginatorKeyFile>
-  </PropertyGroup> -->
+  
   <ItemGroup>
-    <Compile Include="ConfigurationManager.cs" />
-    <Compile Include="Extensions\StringExtensions.cs" />
-    <Compile Include="Infrastructure\CustomConfigSection.cs" />
-    <Compile Include="Infrastructure\Configuration.cs" />
-    <Compile Include="NameValueCollection.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <!-- This None is here so the conditionally included files show up in the Solution Explorer -->
+    <None Include="**\*.cs;**\*.xml;**\*.axml;**\*.png" Exclude="bin\**\*.*;bin;**\obj" />
+    
+    <!--NuGet that bring in good stuff -->
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.4.0" PrivateAssets="All" />
+
+    <!-- We will compile anything ending in .shared.cs  You can change this --> 
+    <Compile Include="**\*.shared.cs" />
   </ItemGroup>
+  
+    <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <Compile Include="**\*.android.cs" />
+    <!-- if you have resources add this
+    <AndroidResource Include="Resources\**\*.axml" />
+    <AndroidResource Include="Resources\**\*.xml" />
+    <AndroidResource Include="Resources\**\*.png" />
+    -->
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="**\*.ios.cs" />
+  </ItemGroup>
+
   <ItemGroup>
-    <None Include="packages.config" />
+    <Folder Include="Properties\" />
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
-  <Target Name="AfterBuild" Condition=" '$(Configuration)' == 'Release'">
-    <!-- Only download a new copy of nuget.exe if we don't have a copy available -->
-    <WebDownload Condition="!Exists('nuget.exe')" Filename="nuget.exe" FileUri="https://dist.nuget.org/win-x86-commandline/latest/nuget.exe" />
-    <!--Exec Command="nuget pack PCLAppConfig.nuspec -Prop Configuration=Release">
-    </Exec-->
-  </Target>
-  <Import Project="..\..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets" Condition="Exists('..\..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MSBuildTasks.1.5.0.235\build\MSBuildTasks.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+  
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
 </Project>

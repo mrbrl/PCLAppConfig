@@ -2152,7 +2152,8 @@
         }
       },
       "PCLAppConfig/1.0.0": {
-        "type": "project"
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0"
       },
       "PCLAppConfig.FileSystemStream.Abstractions/1.0.0": {
         "type": "project"
@@ -4417,7 +4418,8 @@
         }
       },
       "PCLAppConfig/1.0.0": {
-        "type": "project"
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0"
       },
       "PCLAppConfig.FileSystemStream.Abstractions/1.0.0": {
         "type": "project"
@@ -6718,7 +6720,8 @@
         }
       },
       "PCLAppConfig/1.0.0": {
-        "type": "project"
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0"
       },
       "PCLAppConfig.FileSystemStream.Abstractions/1.0.0": {
         "type": "project"
@@ -8992,7 +8995,8 @@
         }
       },
       "PCLAppConfig/1.0.0": {
-        "type": "project"
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0"
       },
       "PCLAppConfig.FileSystemStream.Abstractions/1.0.0": {
         "type": "project"
@@ -11302,7 +11306,8 @@
         }
       },
       "PCLAppConfig/1.0.0": {
-        "type": "project"
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0"
       },
       "PCLAppConfig.FileSystemStream.Abstractions/1.0.0": {
         "type": "project"
@@ -13576,7 +13581,8 @@
         }
       },
       "PCLAppConfig/1.0.0": {
-        "type": "project"
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0"
       },
       "PCLAppConfig.FileSystemStream.Abstractions/1.0.0": {
         "type": "project"
@@ -15886,7 +15892,8 @@
         }
       },
       "PCLAppConfig/1.0.0": {
-        "type": "project"
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0"
       },
       "PCLAppConfig.FileSystemStream.Abstractions/1.0.0": {
         "type": "project"
@@ -22146,7 +22153,9 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nugetized.blob.core.windows.net/live-reload/index.json": {},
+        "https://www.myget.org/F/xamarinforms-ci/api/v2": {}
       },
       "frameworks": {
         "uap10.0.10240": {
@@ -22188,5 +22197,70 @@
         "#import": []
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PCLAppConfig is not compatible with uap10.0.10240 (UAP,Version=v10.0.10240). Project PCLAppConfig supports: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "PCLAppConfig",
+      "targetGraphs": [
+        "UAP,Version=v10.0.10240"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PCLAppConfig is not compatible with uap10.0.10240 (UAP,Version=v10.0.10240) / win10-arm. Project PCLAppConfig supports: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "PCLAppConfig",
+      "targetGraphs": [
+        "UAP,Version=v10.0.10240/win10-arm"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PCLAppConfig is not compatible with uap10.0.10240 (UAP,Version=v10.0.10240) / win10-arm-aot. Project PCLAppConfig supports: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "PCLAppConfig",
+      "targetGraphs": [
+        "UAP,Version=v10.0.10240/win10-arm-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PCLAppConfig is not compatible with uap10.0.10240 (UAP,Version=v10.0.10240) / win10-x64. Project PCLAppConfig supports: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "PCLAppConfig",
+      "targetGraphs": [
+        "UAP,Version=v10.0.10240/win10-x64"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PCLAppConfig is not compatible with uap10.0.10240 (UAP,Version=v10.0.10240) / win10-x64-aot. Project PCLAppConfig supports: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "PCLAppConfig",
+      "targetGraphs": [
+        "UAP,Version=v10.0.10240/win10-x64-aot"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PCLAppConfig is not compatible with uap10.0.10240 (UAP,Version=v10.0.10240) / win10-x86. Project PCLAppConfig supports: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "PCLAppConfig",
+      "targetGraphs": [
+        "UAP,Version=v10.0.10240/win10-x86"
+      ]
+    },
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project PCLAppConfig is not compatible with uap10.0.10240 (UAP,Version=v10.0.10240) / win10-x86-aot. Project PCLAppConfig supports: netstandard2.0 (.NETStandard,Version=v2.0)",
+      "libraryId": "PCLAppConfig",
+      "targetGraphs": [
+        "UAP,Version=v10.0.10240/win10-x86-aot"
+      ]
+    }
+  ]
 }

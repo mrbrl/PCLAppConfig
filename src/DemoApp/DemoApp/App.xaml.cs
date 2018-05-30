@@ -1,7 +1,6 @@
-﻿using System.Reflection;
+﻿using PCLAppConfig;
+using System.Reflection;
 using Xamarin.Forms;
-
-using PCLAppConfig;
 
 namespace DemoApp
 {
@@ -10,8 +9,8 @@ namespace DemoApp
 		public App()
 		{
 			InitializeComponent();
-
-		    ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+            
+		    ConfigurationManager.Initialise();
             
             // Uncomment below to test resource based app config
             // Assembly assembly = typeof(App).GetTypeInfo().Assembly;

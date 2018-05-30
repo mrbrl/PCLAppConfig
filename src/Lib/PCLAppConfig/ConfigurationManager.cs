@@ -16,24 +16,27 @@ namespace PCLAppConfig
 	{
 		private const string ROOT_ELEMENT = "configuration";
 		private const string CONFIG_APP_DEFAULT_PATH = "App.config";
-		private readonly Dictionary<string, XDocument> docMap;
-		private readonly Stream configurationFile;
+		private readonly Dictionary<string, XDocument> _docMap;
+		private readonly Stream _configurationFile;
 
-		public static void Initialise(Stream configurationFile)
-		{
+		public static void Initialise()
+		{           
 			if (AppSettings != null)
 				throw new TypeInitializationException(nameof(ConfigurationManager),
 					new InvalidOperationException("Initialize must be called once in program"));
 
-			AppSettings = new NameValueSettings(new ConfigurationManager(configurationFile).LoadSection<Configuration>().Settings);
+            // read the file here 
+		    Stream configurationFile;
+
+            //AppSettings = new NameValueSettings(new ConfigurationManager(configurationFile).LoadSection<Configuration>().Settings);
 		}
 
 		public static NameValueSettings AppSettings { get; set; }
 
 		public ConfigurationManager(Stream configurationFile)
 		{
-			this.configurationFile = configurationFile;
-			this.docMap = new Dictionary<string, XDocument>();
+			_configurationFile = configurationFile;
+			_docMap = new Dictionary<string, XDocument>();
 		}
 
 		public string GetAppSetting(string key)
@@ -80,10 +83,10 @@ namespace PCLAppConfig
 			if (string.IsNullOrEmpty(configPath))
 				configPath = CONFIG_APP_DEFAULT_PATH; 
 
-			if (!this.docMap.ContainsKey(configPath))
+			if (!this._docMap.ContainsKey(configPath))
 				InitDoc(configPath);
 
-			var doc = this.docMap[configPath];
+			var doc = this._docMap[configPath];
 
 			var section = string.IsNullOrEmpty(sectionName) ? doc.Element(ROOT_ELEMENT)
 				: doc?.Element(ROOT_ELEMENT)?.Element(sectionName);
@@ -96,7 +99,7 @@ namespace PCLAppConfig
 			using (var reader = new StreamReader(configurationFile))
 			{
 				var doc = XDocument.Parse(reader.ReadToEnd());
-				this.docMap.Add(configPath, doc);
+				this._docMap.Add(configPath, doc);
 			}
 		}
 	}   
