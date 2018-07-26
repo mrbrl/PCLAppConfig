@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using Xamarin.Forms;
-
+﻿using Xamarin.Forms;
 using PCLAppConfig;
 
 namespace DemoApp

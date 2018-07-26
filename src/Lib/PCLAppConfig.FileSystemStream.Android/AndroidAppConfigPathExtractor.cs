@@ -1,14 +1,9 @@
-using Android.Content.Res;
-using PCLStorage;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
 
 namespace PCLAppConfig.FileSystemStream
 {
-	public class AndroidAppConfigPathExtractor : IAppConfigPathExtractor
+    public class AndroidAppConfigPathExtractor : IAppConfigPathExtractor
 	{
 	    private const string CONFIG_APP_DEFAULT_PATH = "App.config";
         public string Path
@@ -28,10 +23,15 @@ namespace PCLAppConfig.FileSystemStream
 													'AndroidAsset'");
 				}
 
-				IFile file = FileSystem.Current.LocalStorage.CreateFileAsync(CONFIG_APP_DEFAULT_PATH, CreationCollisionOption.ReplaceExisting).Result;
-				file.WriteAllTextAsync(configFromOriginalFile).Wait();
+			    var localFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+			    var filePath = localFolder + "/" + CONFIG_APP_DEFAULT_PATH;
 
-				return file.Path;
+			    if (File.Exists(filePath))
+			        File.Delete(filePath);
+
+                File.WriteAllText(filePath, configFromOriginalFile);
+
+				return filePath;
 			}
 		}
 	}

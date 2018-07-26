@@ -1,15 +1,9 @@
-﻿using PCLStorage;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 
 namespace PCLAppConfig.FileSystemStream
 {
-	public static class PortableStream
+    public static class PortableStream
 	{
 		private static readonly Lazy<Stream> _appConfigStream = new Lazy<Stream>(CreateAppConfigStream,
 			System.Threading.LazyThreadSafetyMode.PublicationOnly);
@@ -49,36 +43,10 @@ namespace PCLAppConfig.FileSystemStream
 
 		private static Stream GetStream(string path)
 		{
-			var file = FileSystem.Current.GetFileFromPath(path).Result;
+		    if (!File.Exists(path))
+		        throw new FileNotFoundException($"path: {path}");
 
-			if (file == null)
-				throw new FileNotFoundException($"path: {path}");
-
-			return file.Open(PCLStorage.FileAccess.Read).Result;
-		}
-
-		private static async Task<ExistenceCheckResult> CheckExists(this IFolder folder, string path)
-		{
-			return await Task.Run(() => folder.CheckExistsAsync(path)).ConfigureAwait(false);
-		}
-
-		private static async Task<IList<IFile>> GetFiles(this IFolder folder)
-		{
-			return await Task.Run(() => folder.GetFilesAsync()).ConfigureAwait(false);
-		}
-		private static async Task<IFile> GetFile(this IFolder folder, string name)
-		{
-			return await Task.Run(() => folder.GetFileAsync(name)).ConfigureAwait(false);
-		}
-
-		private static async Task<IFile> GetFileFromPath(this IFileSystem fileSystem, string path)
-		{
-			return await Task.Run(() => fileSystem.GetFileFromPathAsync(path)).ConfigureAwait(false);
-		}
-
-		private static async Task<Stream> Open(this IFile file, PCLStorage.FileAccess fileAccess)
-		{
-			return await Task.Run(() => file.OpenAsync(fileAccess)).ConfigureAwait(false);
+            return File.OpenRead(path);
 		}
 	}
 }
