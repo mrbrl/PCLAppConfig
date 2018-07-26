@@ -11,7 +11,7 @@
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/2474918</PackageIconUrl>
     <RepositoryUrl>https://github.com/mrbrl/PCLAppConfig</RepositoryUrl>
     <PackageTags>xamarin xamarin.forms Standard Config App.Config AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</PackageTags>
-    <PackageReleaseNotes>		  - 0.4.0: .Net Standard Update
+    <PackageReleaseNotes>- 0.4.0: .Net Standard Update
       - 0.3.3: PortableStream.Current now can be use in PCL project.
       - 0.3.2: Update to latest dependencies, Update Doc
       - 0.3.1: Added tests and package icon
