@@ -1,7 +1,7 @@
 # PCLAppConfig
 
 
-Xamarin.Forms PCL:
+Xamarin.Forms .Net Standard:
 
 	- PCL AppConfig : cross platfom xamarin forms app settings reader
 	
