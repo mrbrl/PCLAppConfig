@@ -54,8 +54,7 @@ Xamarin.Forms .Net Standard:
 
 ## Roadmap
 
-- Complete fs config for windows 8.1 & WP 8.1
-- Add Tests
+- Add encryption
 
 
 Comments and suggestions are welcomed!
