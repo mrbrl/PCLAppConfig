@@ -36,8 +36,10 @@ namespace PCLAppConfig.FileSystemStream
 			return new IOSAppConfigPathExtractor();
 #elif WINDOWS_UWP
 			return new UWPAppConfigPathExtractor();
+#elif DOTNET
+		    return new DesktopAppConfigPathExtractor();
 #else
-			return null;
+		    return null;
 #endif
 		}
 
