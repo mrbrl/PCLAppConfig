@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>PCLAppConfig</id>
-		<version>0.4.1</version>
+		<version>1.0.0</version>
 		<title>PCL AppConfig - Portable AppSettings Reader</title>
 		<authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</authors>
 		<owners>Ben Ishiyama-levy (Xamariners)</owners>
@@ -10,6 +10,7 @@
 			Cross platform Xamarin AppSettings reader
 		</description>
 		<releaseNotes>
+		  - 1.0.0: updates - ios fix for app.config location
 		  - 0.4.1: .Net Standard Update
       - 0.3.3: PortableStream.Current now can be use in PCL project.
       - 0.3.2: Update to latest dependencies, Update Doc

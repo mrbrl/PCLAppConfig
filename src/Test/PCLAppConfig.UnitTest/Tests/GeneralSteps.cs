@@ -1,5 +1,4 @@
 ﻿using SpecFlow.XForms;
-using System;
 using DemoApp;
 using SpecFlow.XFormsDependency;
 using SpecFlow.XFormsExtensions;
