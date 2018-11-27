@@ -159,14 +159,6 @@
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
-      <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
-      <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.Android\PCLAppConfig.FileSystemStream.Android.csproj">
-      <Project>{61ababa0-1eb5-44e9-aec1-86430846e590}</Project>
-      <Name>PCLAppConfig.FileSystemStream.Android</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Lib\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-B785-4FD8-B486-FA157FD55852}</Project>
       <Name>PCLAppConfig</Name>

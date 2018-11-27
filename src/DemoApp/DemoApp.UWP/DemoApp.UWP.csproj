@@ -132,14 +132,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
-      <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
-      <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.UWP\PCLAppConfig.FileSystemStream.UWP.csproj">
-      <Project>{e16b54f1-fdfc-446e-9f15-d3c61f58f70d}</Project>
-      <Name>PCLAppConfig.FileSystemStream.UWP</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Lib\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-b785-4fd8-b486-fa157fd55852}</Project>
       <Name>PCLAppConfig</Name>

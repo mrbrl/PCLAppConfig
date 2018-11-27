@@ -1,7 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.4.0</Version>
+    <TargetFramework>Xamarin.iOS10</TargetFramework>
+    <TargetFrameworks>Xamarin.iOS10;MonoAndroid81;uap10.0;netstandard2.0</TargetFrameworks>
+    
+    <!--Assembly and Namespace info -->
+    <AssemblyName>PCLAppConfig</AssemblyName>
+    <RootNamespace>PCLAppConfig</RootNamespace>
+
+    <PackageId>PCLAppConfig</PackageId>
+    <Product>$(AssemblyName) ($(TargetFramework))</Product>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <AssemblyFileVersion>1.0.0.0</AssemblyFileVersion>
+    <Version>1.0.0.0</Version>
+    <NeutralLanguage>en</NeutralLanguage>
+
+    <!--Don't auto add files for me, I will tell you -->
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+
+    <!-- Helper to add defines-->
+    <DefineConstants>$(DefineConstants);</DefineConstants>    
+    
+    <!--Assembly and Namespace info -->
+    
+    <!--Version of C# to use -->
+    <LangVersion>default</LangVersion>
+
     <Authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</Authors>
     <Company>Xamariners</Company>
     <Description>Cross platform Xamarin AppSettings reader</Description>
@@ -11,15 +34,65 @@
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/2474918</PackageIconUrl>
     <RepositoryUrl>https://github.com/mrbrl/PCLAppConfig</RepositoryUrl>
     <PackageTags>xamarin xamarin.forms Standard Config App.Config AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</PackageTags>
-    <PackageReleaseNotes>- 0.4.0: .Net Standard Update
+    <PackageReleaseNotes>
+      - 1.0.0: Lib Update
+      - 0.4.0: .Net Standard Update
       - 0.3.3: PortableStream.Current now can be use in PCL project.
       - 0.3.2: Update to latest dependencies, Update Doc
       - 0.3.1: Added tests and package icon
-      - 0.3.0: Initial Release</PackageReleaseNotes>
+      - 0.3.0: Initial Release
+    </PackageReleaseNotes>
     <NeutralLanguage></NeutralLanguage>
+  </PropertyGroup>
+  
+  <!-- Define what happens on build and release -->
+  <PropertyGroup Condition=" '$(Configuration)'=='Debug' ">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  
+  <PropertyGroup Condition=" '$(Configuration)'=='Release' ">
+    <DebugType>pdbonly</DebugType>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
+  
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <!-- This None is here so the conditionally included files show up in the Solution Explorer -->
+    <None Include="**\*.cs" Exclude="obj\**\*.*;bin\**\*.*;bin;obj" />
+    
+    <!--NuGet that bring in good stuff -->
+    <PackageReference Include="MSBuild.Sdk.Extras" Version="1.6.61" PrivateAssets="All" />
+    <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
+
+    <!-- We will compile anything ending in .shared.cs  You can change this --> 
+    <Compile Include="**\*.shared.cs" />
   </ItemGroup>
+  
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('MonoAndroid')) ">
+    <Compile Include="**\*.android.cs" />
+    <!-- if you have resources add this
+    <AndroidResource Include="Resources\**\*.axml" />
+    <AndroidResource Include="Resources\**\*.xml" />
+    <AndroidResource Include="Resources\**\*.png" />
+    -->
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('Xamarin.iOS')) ">
+    <Compile Include="**\*.ios.cs" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" $(TargetFramework.StartsWith('upa')) ">
+    <Compile Include="**\*.uwp.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Xml.XDocument">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETCore\v4.5\System.Xml.XDocument.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  
+  <Import Project="$(MSBuildSDKExtrasTargets)" Condition="Exists('$(MSBuildSDKExtrasTargets)')" />
 </Project>

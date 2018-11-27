@@ -141,16 +141,6 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj">
-      <Project>{47adf18f-1bb7-45ae-addb-fa9291f2c532}</Project>
-      <Name>PCLAppConfig.FileSystemStream.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Lib\PCLAppConfig.FileSystemStream.iOS\PCLAppConfig.FileSystemStream.iOS.csproj">
-      <Project>{c556294c-e117-469d-9a53-cc215dba4eb9}</Project>
-      <Name>PCLAppConfig.FileSystemStream.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\..\Lib\PCLAppConfig\PCLAppConfig.csproj">
       <Project>{91435741-B785-4FD8-B486-FA157FD55852}</Project>
       <Name>PCLAppConfig</Name>
