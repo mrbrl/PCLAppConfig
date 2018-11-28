@@ -45,14 +45,14 @@ namespace PCLAppConfig.FileSystemStream
 	    {
 	        if (!File.Exists(configPath))
 	        {
-	            var dllConfigPath = configPath.Replace("iOS.exe", ".dll");
+	            var dllConfigPath = configPath.Replace("iOS.exe", "dll");
                 
 	            var dllConfigPathExists = File.Exists(dllConfigPath);
 
 	            if (dllConfigPathExists)
 	                return File.OpenRead(dllConfigPath);
 
-	            throw new FileNotFoundException($"path: {configPath}");
+	            throw new FileNotFoundException($"path: {configPath} and {dllConfigPath}");
 	        }
 
 	        return File.OpenRead(configPath);

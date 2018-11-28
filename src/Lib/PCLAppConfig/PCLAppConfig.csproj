@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.4.0</Version>
+    <Version>1.0.1</Version>
     <Authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</Authors>
     <Company>Xamariners</Company>
     <Description>Cross platform Xamarin AppSettings reader</Description>
@@ -11,11 +11,14 @@
     <PackageIconUrl>https://avatars2.githubusercontent.com/u/2474918</PackageIconUrl>
     <RepositoryUrl>https://github.com/mrbrl/PCLAppConfig</RepositoryUrl>
     <PackageTags>xamarin xamarin.forms Standard Config App.Config AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</PackageTags>
-    <PackageReleaseNotes>- 0.4.0: .Net Standard Update
+    <PackageReleaseNotes>
+      - 1.0.1: updates - ios fix for app.config location
+      - 0.4.0: .Net Standard Update
       - 0.3.3: PortableStream.Current now can be use in PCL project.
       - 0.3.2: Update to latest dependencies, Update Doc
       - 0.3.1: Added tests and package icon
-      - 0.3.0: Initial Release</PackageReleaseNotes>
+      - 0.3.0: Initial Release
+    </PackageReleaseNotes>
     <NeutralLanguage></NeutralLanguage>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
