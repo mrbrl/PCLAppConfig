@@ -32,5 +32,5 @@ jobs:
         echo 'cd-------------------'
         cd src
         echo 'ls-------------------'
-        ls
+        nuget restore
       shell: powershell
