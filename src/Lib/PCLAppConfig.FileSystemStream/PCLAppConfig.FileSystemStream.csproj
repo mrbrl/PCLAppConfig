@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <Compile Include="..\PCLAppConfig\Properties\AssemblyInfo_Shared.cs" Link="Properties\AssemblyInfo_Shared.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj" />
