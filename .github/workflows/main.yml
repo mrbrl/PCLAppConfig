@@ -24,4 +24,5 @@ jobs:
     - name: Android build
       run: |
         pwd
+        ls
       shell: powershell
