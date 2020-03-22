@@ -24,5 +24,10 @@ jobs:
     - name: Android build
       run: |
         pwd
+        echo 'ls:------------------'
+        ls
+        echo 'cd-------------------'
+        cd ../src/
+        echo 'ls:------------------'
         ls
       shell: powershell
