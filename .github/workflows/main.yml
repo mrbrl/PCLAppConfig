@@ -29,6 +29,8 @@ jobs:
     - uses: actions/checkout@v2
     - name: Android build
       run: |
+        cd src
         nuget restore
         cd DemoApp\DemoApp.Droid
+        msbuild DemoApp.Droid.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
       shell: powershell
