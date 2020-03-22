@@ -24,8 +24,4 @@ jobs:
     - name: Android build
       run: |
         pwd
-        cd src
-        nuget restore
-        cd DemoApp/DemoApp.Droid
-        pwd
-        msbuild DemoApp.Droid.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
+      shell: powershell
