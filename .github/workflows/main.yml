@@ -27,4 +27,7 @@ jobs:
         echo 'ls:------------------'
         ls
         echo 'cd-------------------'
+        cd src
+        echo 'ls-------------------'
+        ls
       shell: powershell
