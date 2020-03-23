@@ -34,3 +34,9 @@ jobs:
         cd DemoApp\DemoApp.Droid
         msbuild DemoApp.Droid.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
       shell: powershell
+
+    - name: Archive production artifacts
+      uses: actions/upload-artifact@v1
+      with:
+        name: PCLAppConfig.1.0.2.nupkg
+        path: src/build
