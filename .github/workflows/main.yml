@@ -35,6 +35,12 @@ jobs:
         msbuild DemoApp.Droid.csproj /verbosity:normal /t:Rebuild /p:Configuration=Debug
       shell: powershell
 
+    - name: Library build
+      run: |
+        cd src
+        nuget restore
+        msbuild PCLAppConfig.sln /verbosity:normal /t:Rebuild /p:Configuration=Release
+        
     - name: Archive production artifacts
       uses: actions/upload-artifact@v1
       with:
