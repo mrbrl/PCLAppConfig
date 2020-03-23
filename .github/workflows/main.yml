@@ -39,4 +39,4 @@ jobs:
       uses: actions/upload-artifact@v1
       with:
         name: PCLAppConfig.1.0.2.nupkg
-        path: src/build
+        path: ../src/build
