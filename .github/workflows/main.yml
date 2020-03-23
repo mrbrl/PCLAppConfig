@@ -38,7 +38,7 @@ jobs:
     - name: Library build
       run: |
         cd src
-        nuge restore
+        nuget restore
         msbuild PCLAppConfig.sln /verbosity:normal /t:Rebuild /p:Configuration=Release
         
     - name: Archive production artifacts
