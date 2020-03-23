@@ -9,5 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="..\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj" />
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if not exist &quot;$(SolutionDir)\build&quot; mkdir &quot;$(SolutionDir)\build&quot;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)\build\$(TargetFileName)&quot;&#xD;&#xA;&#xD;&#xA;copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)\build\$(TargetFileName).debugTask&quot;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;rem --- NuGet pack and push ------------------------------------------------------------------------------&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;if not &quot;$(ConfigurationName)&quot;==&quot;Release&quot; goto :noRelease&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&quot;$(SolutionDir)\.nuget\NuGet.exe&quot; pack &quot;$(SolutionDir)\PCLAppConfig.nuspec&quot; -Verbosity detailed -NonInteractive -IncludeReferencedProjects -NonInteractive -Tool -Properties ConfigurationName=$(ConfigurationName) -Symbols&#xD;&#xA;&#xD;&#xA;move *.nupkg &quot;$(SolutionDir)\build\&quot;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;:noRelease" />
+  </Target>
 
 </Project>

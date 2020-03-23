@@ -21,7 +21,7 @@
       - 0.3.0: Initial Release
 </PackageReleaseNotes>
     <NeutralLanguage></NeutralLanguage>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
 </Project>

@@ -771,7 +771,7 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
-      "PCLAppConfig/1.0.1": {
+      "PCLAppConfig/1.0.2": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
         "compile": {
@@ -1833,7 +1833,7 @@
         "xamarin.forms.nuspec"
       ]
     },
-    "PCLAppConfig/1.0.1": {
+    "PCLAppConfig/1.0.2": {
       "type": "project",
       "path": "../PCLAppConfig/PCLAppConfig.csproj",
       "msbuildProject": "../PCLAppConfig/PCLAppConfig.csproj"
@@ -1846,7 +1846,7 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
-      "PCLAppConfig >= 1.0.1",
+      "PCLAppConfig >= 1.0.2",
       "PCLAppConfig.FileSystemStream.Abstractions >= 1.0.0",
       "Xamarin.Forms >= 4.5.0.396"
     ]
