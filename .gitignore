@@ -24,6 +24,9 @@
 *.sdf
 *.opensdf
 *.unsuccessfulbuild
+*.lut
+src/.vs/TestStore/
+src/.vs/*
 ipch/
 obj/
 [Bb]in

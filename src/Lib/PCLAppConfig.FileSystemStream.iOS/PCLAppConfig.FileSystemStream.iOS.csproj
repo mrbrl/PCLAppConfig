@@ -37,12 +37,17 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
     <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="..\PCLAppConfig.FileSystemStream\PortableStream.cs">
       <Link>PortableStream.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLAppConfig.FileSystemStream\Properties\AssemblyInfo.cs">
+      <Link>Properties\AssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="..\PCLAppConfig\Properties\AssemblyInfo_Shared.cs">
+      <Link>Properties\AssemblyInfo_Shared.cs</Link>
     </Compile>
     <Compile Include="IOSAppConfigPathExtractor.cs" />
   </ItemGroup>
