@@ -112,7 +112,6 @@
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="DemoApp.UWP_TemporaryKey.pfx" />
-    <None Include="Windows_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
