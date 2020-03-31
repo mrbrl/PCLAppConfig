@@ -1,5 +1,7 @@
 # PCLAppConfig
 
+![CI on Push and Pull Request](https://github.com/soroshsabz/PCLAppConfig/workflows/CI%20on%20Push%20and%20Pull%20Request/badge.svg)
+
 
 Xamarin.Forms .Net Standard:
 
