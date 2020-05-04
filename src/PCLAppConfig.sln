@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29911.84
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lib", "Lib", "{70584D47-5C81-4C41-BA98-B5E6D9B8A40E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4E217353-F4C5-4316-A1E2-604F85381422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig", "Lib\PCLAppConfig\PCLAppConfig.csproj", "{91435741-B785-4FD8-B486-FA157FD55852}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLAppConfig", "Lib\PCLAppConfig\PCLAppConfig.csproj", "{91435741-B785-4FD8-B486-FA157FD55852}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{4E978199-599F-4001-A863-5746204F8B1D}"
 EndProject
@@ -17,9 +17,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp.iOS", "DemoApp\Demo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp.UWP", "DemoApp\DemoApp.UWP\DemoApp.UWP.csproj", "{C6CD8530-FECA-4B06-AFDD-7CC02D00FD4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoApp", "DemoApp\DemoApp\DemoApp.csproj", "{03B96875-A80D-4610-9B73-F3BE382314F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoApp", "DemoApp\DemoApp\DemoApp.csproj", "{03B96875-A80D-4610-9B73-F3BE382314F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.FileSystemStream", "Lib\PCLAppConfig.FileSystemStream\PCLAppConfig.FileSystemStream.csproj", "{7F2D2561-0F78-4597-9E09-043E757BFCE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLAppConfig.FileSystemStream", "Lib\PCLAppConfig.FileSystemStream\PCLAppConfig.FileSystemStream.csproj", "{7F2D2561-0F78-4597-9E09-043E757BFCE5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{91435741-B785-4FD8-B486-FA157FD55852} = {91435741-B785-4FD8-B486-FA157FD55852}
+		{C556294C-E117-469D-9A53-CC215DBA4EB9} = {C556294C-E117-469D-9A53-CC215DBA4EB9}
+		{61ABABA0-1EB5-44E9-AEC1-86430846E590} = {61ABABA0-1EB5-44E9-AEC1-86430846E590}
+		{E16B54F1-FDFC-446E-9F15-D3C61F58F70D} = {E16B54F1-FDFC-446E-9F15-D3C61F58F70D}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.FileSystemStream.Android", "Lib\PCLAppConfig.FileSystemStream.Android\PCLAppConfig.FileSystemStream.Android.csproj", "{61ABABA0-1EB5-44E9-AEC1-86430846E590}"
 EndProject
@@ -27,15 +33,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.FileSystemStre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.FileSystemStream.iOS", "Lib\PCLAppConfig.FileSystemStream.iOS\PCLAppConfig.FileSystemStream.iOS.csproj", "{C556294C-E117-469D-9A53-CC215DBA4EB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.FileSystemStream.Abstractions", "Lib\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj", "{47ADF18F-1BB7-45AE-ADDB-FA9291F2C532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLAppConfig.FileSystemStream.Abstractions", "Lib\PCLAppConfig.FileSystemStream.Abstractions\PCLAppConfig.FileSystemStream.Abstractions.csproj", "{47ADF18F-1BB7-45AE-ADDB-FA9291F2C532}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9D100221-BC18-4732-847E-6A6AEFB0FCBD}"
 	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
 		global.json = global.json
 		PCLAppConfig.nuspec = PCLAppConfig.nuspec
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PCLAppConfig.UnitTest", "Test\PCLAppConfig.UnitTest\PCLAppConfig.UnitTest.csproj", "{F9FFEE2C-2397-411D-8D55-4D4F333B3938}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLAppConfig.UnitTest", "Test\PCLAppConfig.UnitTest\PCLAppConfig.UnitTest.csproj", "{F9FFEE2C-2397-411D-8D55-4D4F333B3938}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

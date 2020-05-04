@@ -1,25 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DemoApp;
-using SpecFlow.XForms;
+﻿using System.Collections;
+using System.Reflection;
+using BoDi;
 using TechTalk.SpecFlow;
+using Xamarin.Forms;
+using Xamarin.Forms.Mocks;
 
 namespace PCLAppConfig.UnitTest.Infrastructure
 {
     [Binding]
-    public class SetupHooks : TestSetupHooks
+    public class SetupHooks : Xamariners.UnitTest.Xamarin.Infrastructure.SetupHooks
     {
+        private readonly ScenarioContext _scenarioContext;
+
+        public SetupHooks(IObjectContainer objectContainer, ScenarioContext scenarioContext) : base(objectContainer)
+        {
+            _scenarioContext = scenarioContext;
+        }
         /// <summary>
         ///     The before scenario.
         /// </summary>
         [BeforeScenario]
         public void BeforeScenario()
         {
-            // bootstrap test app with your test app and your starting viewmodel
-            new TestAppBootstrap().RunApplication<PCLAppConfigTest, MainViewModel>();
-            ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+            base.BeforeScenario();
+            App = new TestApp();
+        }
+
+
+        [AfterScenario(Order = 10)]
+        public override void AfterScenario()
+        {
+            //base.AfterScenario();
+            _scenarioContext.Clear();
         }
     }
 }

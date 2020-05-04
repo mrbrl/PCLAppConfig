@@ -1,5 +1,8 @@
 ﻿using System;
 using System.IO;
+using System.Net.Mime;
+using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace PCLAppConfig.FileSystemStream
 {
@@ -37,9 +40,9 @@ namespace PCLAppConfig.FileSystemStream
 #elif WINDOWS_UWP
 			return new UWPAppConfigPathExtractor();
 #else
-			return null;
+            return new DefaultConfigPathExtractor();
 #endif
-		}
+        }
         
 	    private static Stream GetStream(string configPath)
 	    {

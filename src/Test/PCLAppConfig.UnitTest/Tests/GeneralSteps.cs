@@ -1,38 +1,19 @@
-﻿using SpecFlow.XForms;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 using DemoApp;
-using SpecFlow.XFormsDependency;
-using SpecFlow.XFormsExtensions;
-using SpecFlow.XFormsNavigation;
 using TechTalk.SpecFlow;
+using Xamariners.UnitTest.Xamarin.Infrastructure;
 
-namespace PCLAppConfig.UnitTest.Test
+namespace PCLAppConfig.UnitTest.Tests
 {
     [Binding]
-    public class GeneralSteps : TestStepBase
+    public class GeneralSteps : StepBase
     {
-        public GeneralSteps(ScenarioContext scenarioContext)
-            : base(scenarioContext)
+        private readonly MainViewModel _viewModel;
+        public GeneralSteps(ScenarioContext scenarioContext) : base(scenarioContext)
         {
-            // you need to instantiate your steps by passing the scenarioContext to the base
-        }
-
-        [Given(@"I am on the main page")]
-        public void GivenIAmOnTheMainPage()
-        {
-            Resolver.Instance.Resolve<INavigationService>().PushAsync<MainViewModel>();
-            Resolver.Instance.Resolve<INavigationService>().CurrentViewModelType.ShouldEqualType<MainViewModel>();
-        }
-        
-        [When(@"I click on the text button")]
-        public void WhenIClickOnTheTextButton()
-        {
-            GetCurrentViewModel<MainViewModel>().PclSettingCommand.Execute(null);
-        }
-        
-        [Then(@"I can see a Label with text ""(.*)""")]
-        public void ThenICanSeeALabelWithText(string text)
-        {
-            GetCurrentViewModel<MainViewModel>().ConfigText.ShouldEqual(text);
+            _viewModel = (MainViewModel)App.GetCurrentViewModel().Result;
         }
     }
 }

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<unitTest:TestApp xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:unitTest="clr-namespace:Xamariners.UnitTest.Xamarin;assembly=Xamariners.UnitTest.Xamarin"
+                  x:Class="PCLAppConfig.UnitTest.TestApp">
+    <unitTest:TestApp.Resources>
+        <ResourceDictionary>
+            <Color x:Key="primaryGreen">#91CA47</Color>
+            <Color x:Key="primaryDarkGreen">#6FA22E</Color>
+            <Color x:Key="AccentColor">#91CA47</Color>
+            <Style TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{StaticResource primaryGreen}"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </unitTest:TestApp.Resources>
+</unitTest:TestApp>

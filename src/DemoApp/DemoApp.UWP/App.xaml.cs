@@ -63,7 +63,7 @@ namespace DemoApp.UWP
 				Xamarin.Forms.Forms.Init(e);
 
                 // comment below to test file based app config
-                ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
+                //ConfigurationManager.Initialise(PCLAppConfig.FileSystemStream.PortableStream.Current);
 
                 if (e.PreviousExecutionState == ApplicationExecutionState.Terminated)
 				{
