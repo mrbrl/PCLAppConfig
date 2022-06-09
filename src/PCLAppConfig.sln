@@ -45,6 +45,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PCLAppConfig.UnitTest", "Test\PCLAppConfig.UnitTest\PCLAppConfig.UnitTest.csproj", "{F9FFEE2C-2397-411D-8D55-4D4F333B3938}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{889DFC27-B704-43BB-B738-E0091E19629F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GitHub", "GitHub", "{2F7569F5-03A6-41B6-B20A-76FE07706734}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{437A867D-E9C6-4144-9A04-04F6919C2C48}"
+	ProjectSection(SolutionItems) = preProject
+		..\.github\workflows\main.yml = ..\.github\workflows\main.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -638,6 +647,8 @@ Global
 		{C556294C-E117-469D-9A53-CC215DBA4EB9} = {70584D47-5C81-4C41-BA98-B5E6D9B8A40E}
 		{47ADF18F-1BB7-45AE-ADDB-FA9291F2C532} = {70584D47-5C81-4C41-BA98-B5E6D9B8A40E}
 		{F9FFEE2C-2397-411D-8D55-4D4F333B3938} = {4E217353-F4C5-4316-A1E2-604F85381422}
+		{2F7569F5-03A6-41B6-B20A-76FE07706734} = {889DFC27-B704-43BB-B738-E0091E19629F}
+		{437A867D-E9C6-4144-9A04-04F6919C2C48} = {2F7569F5-03A6-41B6-B20A-76FE07706734}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5AF36FE1-FAA8-4802-B5C1-FF9548C202D3}
