@@ -27,6 +27,8 @@ jobs:
 
     - name: Setup Windows 10 SDK Action
       uses: GuillaumeFalourd/setup-windows10-sdk-action@v1.6
+      with:
+        sdk-version: 18362
 
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
