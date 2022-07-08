@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>PCLAppConfig</id>
-		<version>1.0.2</version>
+		<version>1.0.3</version>
 		<title>PCL AppConfig - Portable AppSettings Reader</title>
 		<authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</authors>
 		<owners>Ben Ishiyama-levy (Xamariners)</owners>
@@ -10,6 +10,7 @@
 			Cross platform Xamarin AppSettings reader
 		</description>
 		<releaseNotes>
+		  - 1.0.3: Fix UWP exe.config generating when using SlowCheetah
 		  - 1.0.2: Fix version problem in implementation assemblies
 		  - 1.0.1: updates - ios fix for app.config location
 		  - 0.4.1: .Net Standard Update
@@ -25,7 +26,7 @@
 		<projectUrl>https://github.com/mrbrl/PCLAppConfig</projectUrl>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<licenseUrl>http://opensource.org/licenses/Apache-2.0</licenseUrl>
-		<copyright>Copyright Xamariners 2018</copyright>	
+		<copyright>Copyright Xamariners 2022</copyright>	
 		<tags>xamarin xamarin.forms Standard Config App.Config AppSettings Configuration ConfigurationManager uwp winrt android ios xamarin monoandroid monodroid monotouch xamariners</tags>
 		<iconUrl>https://avatars2.githubusercontent.com/u/2474918</iconUrl>
 	</metadata>
