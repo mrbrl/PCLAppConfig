@@ -2,7 +2,7 @@
 <package >
 	<metadata>
 		<id>PCLAppConfig</id>
-		<version>1.0.4</version>
+		<version>1.0.7</version>
 		<title>PCL AppConfig - Portable AppSettings Reader</title>
 		<authors>Ben Ishiyama-levy (Xamariners), Seyyed Soroosh Hosseinalipour</authors>
 		<owners>Ben Ishiyama-levy (Xamariners)</owners>
@@ -10,6 +10,7 @@
 			Cross platform Xamarin AppSettings reader
 		</description>
 		<releaseNotes>
+		  - 1.0.7: Correct Assembly version
 		  - 1.0.4: Correct UWP config searching based on exe name
 		  - 1.0.3: Fix UWP exe.config generating when using SlowCheetah
 		  - 1.0.2: Fix version problem in implementation assemblies
