@@ -15,14 +15,19 @@ namespace PCLAppConfig.FileSystemStream
 			get
 			{
 				string rootPath = Package.Current.InstalledLocation.Path;
-				string exeConfig = System.IO.Path.Combine(rootPath, Package.Current.DisplayName + ".exe.config");
-				if (!File.Exists(exeConfig))
+				string packageConfig = System.IO.Path.Combine(rootPath, Package.Current.DisplayName + ".exe.config");
+				string exeConfig = System.IO.Path.Combine(rootPath, System.AppDomain.CurrentDomain.FriendlyName + ".exe.config");
+				if (File.Exists(packageConfig))
 				{
-					return System.IO.Path.Combine(rootPath, "App.config");
+					return packageConfig;
+				}
+				else if (File.Exists(exeConfig))
+				{
+					return exeConfig;
 				}
 				else
 				{
-					return exeConfig;
+					return System.IO.Path.Combine(rootPath, "App.config");
 				}
 			}
 		}
