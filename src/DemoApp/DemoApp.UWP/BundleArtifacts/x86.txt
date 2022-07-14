@@ -1,0 +1,2 @@
+MainPackage=D:\Source\Repos\soroshsabz\PCLAppConfig\src\DemoApp\DemoApp.UWP\bin\x86\Debug\DemoApp.UWP_1.0.1.0_x86_Debug.appx
+SymbolPackage=D:\Source\Repos\soroshsabz\PCLAppConfig\src\DemoApp\DemoApp.UWP\obj\x86\Debug\Symbols\DemoApp.UWP_1.0.1.0_x86_Debug.appxsym
